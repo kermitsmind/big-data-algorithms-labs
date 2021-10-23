@@ -1,0 +1,4 @@
+[debug] [hello_world-build] Classpath dependencies List()
+[debug] [hello_world-build] Dependencies from configurations List()
+[debug] Bloop wrote the configuration of project 'hello_world-build' to '/Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 0/l0_t1_2/hello_world/project/.bloop/hello_world-build.json'
+[success] Generated .bloop/hello_world-build.json
