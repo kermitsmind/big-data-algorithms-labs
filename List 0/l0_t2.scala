@@ -8,10 +8,12 @@
 // https://alvinalexander.com/scala/how-to-sort-map-in-scala-key-value-sortby-sortwith/
 // https://stackoverflow.com/questions/18018676/select-first-n-elements-from-map-in-scala
 // https://www.geeksforgeeks.org/scala-string-tolowercase-method-with-example/
+// https://stackoverflow.com/questions/6870145/how-do-i-append-to-a-file-in-scala/30389093
 
 import scala.io.Source
 import scala.collection.concurrent
 import scala.collection.immutable.ListMap
+import java.io._
 
 object MainObject {
     
@@ -62,41 +64,23 @@ object MainObject {
         var filteredWords = removeElements(bookWords, stopWords)
         
 
-        // var arrayTest : Array[String] = Array("a", "b", "b", "c")
+        var arrayTest : Array[String] = Array("a", "b", "b", "c")
         val resultMap: Map[String, Int] = countWordsFrequency(filteredWords)
 
         val resultSortedMap: Map[String, Int] = ListMap(resultMap.toSeq.sortWith(_._2 > _._2):_*)
 
-        // println("keys: " + resultSortedMap.keys)
-        // println("vals: " + resultSortedMap.values)
-
-        val resultSortedMapFirstN: Map[String, Int] = resultSortedMap.take(10)
+        val resultSortedMapFirstN: Map[String, Int] = resultSortedMap.take(100)
         print(resultSortedMapFirstN)
         
-        // code below shows how to use concurrent maps
-        // import scala.collection.concurrent - this needs to be imported
-        // val results: concurrent.Map[String, Int] = new concurrent.TrieMap()
-        // results.putIfAbsent("a", 1)
-        // results.putIfAbsent("a", 2)
-        // results.putIfAbsent("b", 2)
-        // val results: concurrent.Map[String, Int].asScala = concurrent.Map[String, Int]()
-        // val m1 = mapTest + ("a" -> 1)
-        // mapTest = m1
-        // println("keys: " + results.keys)
-        // println("values: " + results.values)
-        // println("get: " + results.get("a"))
-        // results.replace("a", 7)
-        // println("keys: " + results.keys)
-        // println("values: " + results.values)
-
-        // val test: String = "xx"
-        // if(results contains(test)){
-        //     println("CONTAINS")
-        // }else{
-        //     println("DOES NOT CONTAIN")
-        // }
-
-
+        val resultCsvFileName: String = "resultFrequencyWords.csv"
+        val fw = new FileWriter(resultCsvFileName, true)
+        for (key <- resultSortedMapFirstN.keys){
+            //fw.write(key + ", " + resultSortedMapFirstN.getOrElse(key, "-")) 
+            //format fot word cloud generator
+            fw.write("\"" + resultSortedMapFirstN.getOrElse(key, "-") + "\"" + ";" + "\"" + key + "\"") 
+            fw.write("\n")
+        }
+        fw.close()
 
     }
 }
