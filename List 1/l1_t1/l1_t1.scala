@@ -79,8 +79,8 @@ class WordAnalyzer(){
         }catch{
             case e: FileNotFoundException => println("Such file does not exist")
         }
-        workingArrayOfWords = importedWords
-        return importedWords
+        var resultImportedWords = workingArrayOfWords ++ importedWords
+        return resultImportedWords
     }
     
     def removeElements(initialArray: Array[String] = workingArrayOfWords, toBeRemovedArray: Array[String] = stopWords): Unit = {
@@ -167,6 +167,7 @@ object MainObject {
         var loopCondition: Boolean = true
         breakable{
             while(loopCondition){
+                print("\nLoaded data: ")
                 print("\nLOOP action: ")
                 var loopUserInput = scala.io.StdIn.readLine()
                 loopUserInput match {
@@ -185,7 +186,7 @@ object MainObject {
                         // import data and append to an existing array
                         print("File name: ")
                         var fileName = scala.io.StdIn.readLine()
-                        wordAnalyzerObject.importFreshData(fileName)
+                        wordAnalyzerObject.importAppendData(fileName)
                     }
 
                     case "array remove stopwords" => {
