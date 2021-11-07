@@ -22,8 +22,9 @@ class WordAnalyzer(){
     var stopWords = importData(stopWordsFileName)
 
     var workingWordsFrequencyMap: Map[String, Int] = Map()
+    var workingArrayOfWords : Array[String] = Array()
 
-    def getUserInput(): Array[String] = {
+    def getUserInput(): Unit = {
         println("User input: ")
         val userInputGet = scala.io.StdIn.readLine()
         val userInput = userInputGet.concat(" ")
@@ -43,7 +44,8 @@ class WordAnalyzer(){
 
             }
         }
-        return importedWords
+        workingArrayOfWords = importedWords
+        // return importedWords
     }
 
     def importData(file_name: String): Array[String] = {
@@ -59,18 +61,20 @@ class WordAnalyzer(){
         }catch{
             case e: FileNotFoundException => println("Such file does not exist")
         }
+        workingArrayOfWords = importedWords
         return importedWords
     }
     
-    def removeElements(initialArray: Array[String], toBeRemovedArray: Array[String] = stopWords): Array[String] = {
+    def removeElements(initialArray: Array[String] = workingArrayOfWords, toBeRemovedArray: Array[String] = stopWords): Unit = {
         var filteredArray : Array[String] = initialArray
         for (elementToBeRemoved <- toBeRemovedArray) {
             filteredArray = filteredArray.filterNot(element => element == elementToBeRemoved)
         }
-        return filteredArray
+        workingArrayOfWords = filteredArray
+        // return filteredArray
     }
         
-    def countWordsFrequency(givenArray: Array[String]): Map[String, Int] = {
+    def countWordsFrequency(givenArray: Array[String] = workingArrayOfWords): Map[String, Int] = {
         val wordsFrequencyMap: concurrent.Map[String, Int] = new concurrent.TrieMap()
         for (word <- givenArray){
             if(wordsFrequencyMap.keys.toArray contains word){
@@ -123,7 +127,7 @@ object MainObject {
     def main(args:Array[String]) = {
 
         val wordAnalyzerObject = new WordAnalyzer()
-        var workingArrayOfWords : Array[String] = Array()
+        // var workingArrayOfWords : Array[String] = Array()
         var loopCondition: Boolean = true
         breakable{
             while(loopCondition){
@@ -131,22 +135,21 @@ object MainObject {
                 var loopUserInput = scala.io.StdIn.readLine()
                 loopUserInput match {
                     case "user input" => {
-                        workingArrayOfWords = wordAnalyzerObject.getUserInput()
+                        wordAnalyzerObject.getUserInput()
                     }
 
                     case "load file" => {
                         print("File name: ")
                         var fileName = scala.io.StdIn.readLine()
-                        workingArrayOfWords = wordAnalyzerObject.importData(fileName)
+                        wordAnalyzerObject.importData(fileName)
                     }
 
                     case "array remove stopwords" => {
-                        var filteredWords = wordAnalyzerObject.removeElements(workingArrayOfWords)
-                        workingArrayOfWords = filteredWords
+                        wordAnalyzerObject.removeElements()
                     }
 
                     case "count words frequency" => {
-                        val resultMap: Map[String, Int] = wordAnalyzerObject.countWordsFrequency(workingArrayOfWords)
+                        val resultMap: Map[String, Int] = wordAnalyzerObject.countWordsFrequency()
                         val resultSortedMapFirstN: Map[String, Int] = resultMap.take(10)
                         println(resultSortedMapFirstN)
                     }
