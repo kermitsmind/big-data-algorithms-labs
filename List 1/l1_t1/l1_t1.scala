@@ -19,7 +19,7 @@ import util.control.Breaks._
 class WordAnalyzer(){
     
     val stopWordsFileName = "stop_words_english.txt"
-    var stopWords = importData(stopWordsFileName)
+    var stopWords = importFreshData(stopWordsFileName)
 
     var workingWordsFrequencyMap: Map[String, Int] = Map()
     var workingArrayOfWords : Array[String] = Array()
@@ -44,11 +44,29 @@ class WordAnalyzer(){
 
             }
         }
-        workingArrayOfWords = importedWords
+        var resultWords : Array[String] = workingArrayOfWords ++ importedWords
+        workingArrayOfWords = resultWords
         // return importedWords
     }
 
-    def importData(file_name: String): Array[String] = {
+    def importFreshData(file_name: String): Array[String] = {
+        var importedWords : Array[String] = Array()
+        try {
+            for (line <- Source.fromFile(file_name).getLines) {
+                var words = line.split(" ")
+                for (word <- words) {
+                    var newWord = word.replaceAll("""[\p{Punct}]""", "")
+                    importedWords = importedWords :+ newWord.toLowerCase()
+                }
+            }
+        }catch{
+            case e: FileNotFoundException => println("Such file does not exist")
+        }
+        workingArrayOfWords = importedWords
+        return importedWords
+    }
+
+    def importAppendData(file_name: String): Array[String] = {
         var importedWords : Array[String] = Array()
         try {
             for (line <- Source.fromFile(file_name).getLines) {
@@ -72,6 +90,19 @@ class WordAnalyzer(){
         }
         workingArrayOfWords = filteredArray
         // return filteredArray
+    }
+
+    def refreshArray(givenArray: Array[String] = workingArrayOfWords): Unit = {
+        var newArrayOfWords : Array[String] = Array()
+        workingArrayOfWords = newArrayOfWords
+    }
+
+    def printArrayFirstN(givenArray: Array[String] = workingArrayOfWords, n: Int): Unit = {
+        val resultTakenArray: Array[String] = workingArrayOfWords
+        val resultTakenList: List[String] = resultTakenArray.toList
+        for (word <- resultTakenList.take(n)){
+            print(word + " ")
+        }
     }
         
     def countWordsFrequency(givenArray: Array[String] = workingArrayOfWords): Map[String, Int] = {
@@ -119,6 +150,11 @@ class WordAnalyzer(){
         }
         fw.close()
     }
+
+    def refreshMap(givenMap: Map[String, Int] = workingWordsFrequencyMap): Unit = {
+        var newWordsFrequencyMap: Map[String, Int] = Map()
+        workingWordsFrequencyMap = newWordsFrequencyMap
+    }
 }
 
 
@@ -138,14 +174,32 @@ object MainObject {
                         wordAnalyzerObject.getUserInput()
                     }
 
-                    case "load file" => {
+                    case "import fresh data" => {
+                        // create new empty array and import data
                         print("File name: ")
                         var fileName = scala.io.StdIn.readLine()
-                        wordAnalyzerObject.importData(fileName)
+                        wordAnalyzerObject.importFreshData(fileName)
+                    }
+
+                    case "import append data" => {
+                        // import data and append to an existing array
+                        print("File name: ")
+                        var fileName = scala.io.StdIn.readLine()
+                        wordAnalyzerObject.importFreshData(fileName)
                     }
 
                     case "array remove stopwords" => {
                         wordAnalyzerObject.removeElements()
+                    }
+
+                    case "refresh array" => {
+                        wordAnalyzerObject.refreshArray()
+                    }                    
+
+                    case "print array" => {
+                        println("Number of elements: ")
+                        var numberOfelements = scala.io.StdIn.readLine()
+                        wordAnalyzerObject.printArrayFirstN(n = numberOfelements.toInt)
                     }
 
                     case "count words frequency" => {
@@ -160,7 +214,7 @@ object MainObject {
                         println(resultSortedMapFirstN)
                     }
 
-                    case "sort map asscending" => {
+                    case "sort map ascending" => {
                         var sortedWordsMapAscending: Map[String, Int] = wordAnalyzerObject.sortWordsMapAscending()
                         val resultSortedMapFirstN: Map[String, Int] = sortedWordsMapAscending.take(10)
                         println(resultSortedMapFirstN)
@@ -179,6 +233,10 @@ object MainObject {
                         var fileName = scala.io.StdIn.readLine()
                         wordAnalyzerObject.saveMapFirstN(n = numberOfelements.toInt, resultCsvFileName = fileName)
                     }
+
+                    case "refresh map" => {
+                        wordAnalyzerObject.refreshMap()
+                    }                    
 
                     case "break" => {
                         loopCondition = false
