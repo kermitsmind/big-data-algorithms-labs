@@ -24,6 +24,10 @@ class WordAnalyzer(){
     var workingWordsFrequencyMap: Map[String, Int] = Map()
     var workingArrayOfWords : Array[String] = Array()
 
+    var workingDocumentsMap: Map[String, Array[String]] = Map()
+    var workingDocuments_TF_IDF_fMap: Map[String, Map[String, Float]] = Map()
+    var loadedArrayDocuments : Array[String] = Array()
+
     def getUserInput(): Unit = {
         println("User input: ")
         val userInputGet = scala.io.StdIn.readLine()
@@ -51,6 +55,7 @@ class WordAnalyzer(){
 
     def importFreshData(file_name: String): Array[String] = {
         var importedWords : Array[String] = Array()
+        var emptyArray : Array[String] = Array()
         try {
             for (line <- Source.fromFile(file_name).getLines) {
                 var words = line.split(" ")
@@ -63,7 +68,34 @@ class WordAnalyzer(){
             case e: FileNotFoundException => println("Such file does not exist")
         }
         workingArrayOfWords = importedWords
+        loadedArrayDocuments = emptyArray
+        loadedArrayDocuments = loadedArrayDocuments :+ file_name
         return importedWords
+    }
+
+    def importIntoDocumentsMap(file_name: String): Unit = {
+        var importedWords : Array[String] = importFreshData(file_name=file_name)
+        workingDocumentsMap += (file_name -> importedWords)
+    }
+
+    def printLoadedMapDocuments(): Unit = {
+        for (key <- workingDocumentsMap.keys){
+            print(" -- " + key)
+        }
+    }
+
+    def printLoadedArrayDocuments(): Unit = {
+        for (document <- loadedArrayDocuments){
+            print(" -- " + document)
+        }
+    }
+
+    def addSelectedDocumentIntoArray(): Unit = {
+        println("Document name: ")
+        val documentName = scala.io.StdIn.readLine()
+        var resultWords : Array[String] = workingArrayOfWords ++ workingDocumentsMap(documentName)
+        workingArrayOfWords = resultWords
+        loadedArrayDocuments = loadedArrayDocuments :+ documentName
     }
 
     def importAppendData(file_name: String): Array[String] = {
@@ -80,6 +112,7 @@ class WordAnalyzer(){
             case e: FileNotFoundException => println("Such file does not exist")
         }
         var resultImportedWords = workingArrayOfWords ++ importedWords
+        loadedArrayDocuments = loadedArrayDocuments :+ file_name
         return resultImportedWords
     }
     
@@ -95,6 +128,7 @@ class WordAnalyzer(){
     def refreshArray(givenArray: Array[String] = workingArrayOfWords): Unit = {
         var newArrayOfWords : Array[String] = Array()
         workingArrayOfWords = newArrayOfWords
+        loadedArrayDocuments = newArrayOfWords
     }
 
     def printArrayFirstN(givenArray: Array[String] = workingArrayOfWords, n: Int): Unit = {
@@ -155,6 +189,10 @@ class WordAnalyzer(){
         var newWordsFrequencyMap: Map[String, Int] = Map()
         workingWordsFrequencyMap = newWordsFrequencyMap
     }
+
+    def compute_TF_IDF(documentID: String, words: Array[String]): Unit{
+        
+    }
 }
 
 
@@ -167,12 +205,28 @@ object MainObject {
         var loopCondition: Boolean = true
         breakable{
             while(loopCondition){
-                print("\nLoaded data: ")
-                print("\nLOOP action: ")
+                print("\n|----------------")
+                print("\n|Loaded into map:\n|")
+                wordAnalyzerObject.printLoadedMapDocuments()
+                print("\n|Loaded into array:\n|")
+                wordAnalyzerObject.printLoadedArrayDocuments()
+                print("\n\nLOOP action: ")
                 var loopUserInput = scala.io.StdIn.readLine()
                 loopUserInput match {
                     case "user input" => {
                         wordAnalyzerObject.getUserInput()
+                    }
+
+                    case "import into map" => {
+                        // add document into map for further actions
+                        print("File name: ")
+                        var fileName = scala.io.StdIn.readLine()
+                        wordAnalyzerObject.importIntoDocumentsMap(fileName)
+                    }
+
+                    case "import from map into array" => {
+                        // add document from map into array for further actions
+                        wordAnalyzerObject.addSelectedDocumentIntoArray()
                     }
 
                     case "import fresh data" => {
