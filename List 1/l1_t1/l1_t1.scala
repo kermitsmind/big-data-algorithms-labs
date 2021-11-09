@@ -15,6 +15,7 @@ import scala.collection.concurrent
 import scala.collection.immutable.ListMap
 import java.io._
 import util.control.Breaks._
+import scala.math._
 
 class WordAnalyzer(){
     
@@ -25,7 +26,7 @@ class WordAnalyzer(){
     var workingArrayOfWords : Array[String] = Array()
 
     var workingDocumentsMap: Map[String, Array[String]] = Map()
-    var workingDocuments_TF_IDF_fMap: Map[String, Map[String, Float]] = Map()
+    var workingDocuments_TF_IDF_Map: concurrent.Map[String, Map[String, Double]] = new concurrent.TrieMap()
     var loadedArrayDocuments : Array[String] = Array()
 
     def getUserInput(): Unit = {
@@ -116,13 +117,13 @@ class WordAnalyzer(){
         return resultImportedWords
     }
     
-    def removeElements(initialArray: Array[String] = workingArrayOfWords, toBeRemovedArray: Array[String] = stopWords): Unit = {
+    def removeElements(initialArray: Array[String] = workingArrayOfWords, toBeRemovedArray: Array[String] = stopWords): Array[String] = {
         var filteredArray : Array[String] = initialArray
         for (elementToBeRemoved <- toBeRemovedArray) {
             filteredArray = filteredArray.filterNot(element => element == elementToBeRemoved)
         }
         workingArrayOfWords = filteredArray
-        // return filteredArray
+        return filteredArray
     }
 
     def refreshArray(givenArray: Array[String] = workingArrayOfWords): Unit = {
@@ -190,8 +191,40 @@ class WordAnalyzer(){
         workingWordsFrequencyMap = newWordsFrequencyMap
     }
 
-    def compute_TF_IDF(documentID: String, words: Array[String]): Unit{
-        
+    def computeDocument_TF_IDF(documentID: String): Map[String, Double] = {
+        var N: Int = loadedArrayDocuments.size // takes into account only loaded documents
+        var n: Int = 0
+        var TF: Double = 0
+        var IDF: Double = 1
+        var TF_IDF: Double = 0
+        var log2 = (x: Double) => log10(x)/log10(2.0)
+        var document_TF_IDF_Map: Map[String, Float] = Map()
+        var wordsArray : Array[String] = workingDocumentsMap(documentID)
+        //var wordsArray : Array[String] = importFreshData(documentID)
+        var filteredWordsArray = removeElements(initialArray = wordsArray)
+        var wordsFrequencyMap: Map[String, Int] = countWordsFrequency(givenArray = filteredWordsArray)
+        var sortedWordsFrequencyMap: Map[String, Int] = sortWordsMapDescending(givenMap = wordsFrequencyMap)
+        var tempWordsFrequencyMap_TF_IDF: concurrent.Map[String, Double] = new concurrent.TrieMap()
+        var sortedWordsFrequencyMap_TF_IDF: Map[String, Double] = Map()
+        var f_ij: Int = 0
+        var f_ik: Int = sortedWordsFrequencyMap.head._2
+
+        for (word <- sortedWordsFrequencyMap.keys){
+            n = 0
+            for (document <- workingDocumentsMap.keys){
+                if (workingDocumentsMap(document) contains word){
+                    n = n + 1
+                }
+            }
+            //IDF = log2(N/n.toDouble)
+            f_ij = wordsFrequencyMap(word)
+            TF = (f_ij.toDouble)/(f_ik.toDouble)
+            TF_IDF = TF*IDF
+            tempWordsFrequencyMap_TF_IDF.putIfAbsent(word, TF_IDF)
+        }
+        sortedWordsFrequencyMap_TF_IDF = ListMap(tempWordsFrequencyMap_TF_IDF.toSeq.sortWith(_._2 > _._2):_*)
+        workingDocuments_TF_IDF_Map.putIfAbsent(documentID, sortedWordsFrequencyMap_TF_IDF)
+        return sortedWordsFrequencyMap_TF_IDF
     }
 }
 
@@ -291,6 +324,14 @@ object MainObject {
 
                     case "refresh map" => {
                         wordAnalyzerObject.refreshMap()
+                    }
+
+                    case "compute document TF-IDF" => {
+                        print("File name: ")
+                        var fileName = scala.io.StdIn.readLine()
+                        var sortedWordsFrequencyMap_TF_IDF: Map[String, Double] = wordAnalyzerObject.computeDocument_TF_IDF(fileName)
+                        val resultSortedWordsFrequencyMap_TF_IDF: Map[String, Double] = sortedWordsFrequencyMap_TF_IDF.take(10)
+                        println(resultSortedWordsFrequencyMap_TF_IDF)
                     }                    
 
                     case "break" => {
