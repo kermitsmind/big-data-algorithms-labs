@@ -224,6 +224,19 @@ class WordAnalyzer(){
 
         sortedWordsFrequencyMap_TF_IDF = ListMap(tempWordsFrequencyMap_TF_IDF.toSeq.sortWith(_._2 > _._2):_*)
         workingDocuments_TF_IDF_Map.putIfAbsent(documentID, sortedWordsFrequencyMap_TF_IDF)
+        
+        var TF_IDF_file: String = "TF-IDF_of__" + documentID + "__out_of_"
+        for (document <- loadedArrayDocuments){
+            TF_IDF_file = TF_IDF_file + "_" + document
+        }
+        TF_IDF_file = TF_IDF_file + "__.txt"
+        val fw = new FileWriter(TF_IDF_file, true)
+        for (key <- sortedWordsFrequencyMap_TF_IDF.keys){
+            fw.write(key + ": " + sortedWordsFrequencyMap_TF_IDF.getOrElse(key, "-")) 
+            fw.write("\n")
+        }
+        fw.close()
+        
         return sortedWordsFrequencyMap_TF_IDF
     }
 }
@@ -257,7 +270,7 @@ object MainObject {
                         wordAnalyzerObject.importIntoDocumentsMap(fileName)
                     }
 
-                    case "import from map into array" => {
+                    case "from map import into array" => {
                         // add document from map into array for further actions
                         wordAnalyzerObject.addSelectedDocumentIntoArray()
                     }
