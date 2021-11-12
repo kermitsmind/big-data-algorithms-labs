@@ -33794,3 +33794,162 @@ WARNING: Unmatched cancel notification for request id 16389
 [0m2021.11.12 12:49:14 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
 [0m2021.11.12 12:49:16 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
 [0m2021.11.12 12:51:05 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 12:51:25 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 12:51:27 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 12:54:23 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 12:54:26 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 12:54:26 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 12:54:42 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 12:56:37 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 12:56:42 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 12:56:44 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 12:56:47 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 12:57:11 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+Nov 12, 2021 12:58:02 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 19961
+[0m2021.11.12 12:58:19 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 12:58:52 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 12:58:53 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 12:59:18 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 12:59:34 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 12:59:35 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 12:59:36 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 12:59:41 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 13:03:10 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+Nov 12, 2021 1:04:11 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 20488
+Nov 12, 2021 1:04:42 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 20497
+[0m2021.11.12 13:05:00 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 13:05:07 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 13:05:27 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+Nov 12, 2021 2:15:13 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 20640
+Nov 12, 2021 2:15:28 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 20653
+Nov 12, 2021 2:15:34 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 20659
+Nov 12, 2021 2:16:17 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 20803
+Nov 12, 2021 2:18:14 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 20955
+Nov 12, 2021 2:18:34 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 20967
+[0m2021.11.12 14:18:55 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+Nov 12, 2021 2:19:00 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 21060
+[0m2021.11.12 14:19:05 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+Nov 12, 2021 2:19:21 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 21073
+[0m2021.11.12 14:19:50 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 14:19:58 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 14:20:24 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 14:20:38 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 14:20:38 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 14:21:16 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 14:21:18 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 14:22:52 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 14:24:38 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 14:24:56 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 14:26:54 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 14:27:26 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 14:27:29 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 14:27:54 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 14:28:16 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 14:29:29 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 14:30:17 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 14:30:23 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 14:31:02 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+Nov 12, 2021 2:31:04 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: java.lang.reflect.InvocationTargetException
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.reflect.InvocationTargetException
+	at jdk.internal.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: java.lang.IllegalArgumentException: 62 is not a valid line number, allowed [0..61]
+	at scala.meta.internal.inputs.InternalInput.lineToOffset(InternalInput.scala:37)
+	at scala.meta.internal.inputs.InternalInput.lineToOffset$(InternalInput.scala:32)
+	at scala.meta.inputs.Input$VirtualFile.lineToOffset(Input.scala:80)
+	at scala.meta.inputs.Position$Range$.apply(Position.scala:59)
+	at scala.meta.internal.mtags.MtagsEnrichments$XtensionPositionLspInverse.toMeta(MtagsEnrichments.scala:133)
+	at scala.meta.internal.parsing.Trees.$anonfun$findLastEnclosingAt$4(Trees.scala:77)
+	at scala.Option.flatMap(Option.scala:271)
+	at scala.meta.internal.parsing.Trees.findLastEnclosingAt(Trees.scala:76)
+	at scala.meta.internal.metals.codeactions.PatternMatchRefactor.contribute(PatternMatchRefactor.scala:96)
+	at scala.meta.internal.metals.CodeActionProvider$$anonfun$1.applyOrElse(CodeActionProvider.scala:62)
+	at scala.meta.internal.metals.CodeActionProvider$$anonfun$1.applyOrElse(CodeActionProvider.scala:61)
+	at scala.collection.immutable.List.collect(List.scala:323)
+	at scala.meta.internal.metals.CodeActionProvider.codeActions(CodeActionProvider.scala:61)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeAction$1(MetalsLanguageServer.scala:1555)
+	at scala.meta.internal.metals.CancelTokens$.future(CancelTokens.scala:38)
+	at scala.meta.internal.metals.MetalsLanguageServer.codeAction(MetalsLanguageServer.scala:1554)
+	... 15 more
+
+Nov 12, 2021 2:31:05 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: java.lang.reflect.InvocationTargetException
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.reflect.InvocationTargetException
+	at jdk.internal.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: java.lang.IllegalArgumentException: 62 is not a valid line number, allowed [0..61]
+	at scala.meta.internal.inputs.InternalInput.lineToOffset(InternalInput.scala:37)
+	at scala.meta.internal.inputs.InternalInput.lineToOffset$(InternalInput.scala:32)
+	at scala.meta.inputs.Input$VirtualFile.lineToOffset(Input.scala:80)
+	at scala.meta.inputs.Position$Range$.apply(Position.scala:59)
+	at scala.meta.internal.mtags.MtagsEnrichments$XtensionPositionLspInverse.toMeta(MtagsEnrichments.scala:133)
+	at scala.meta.internal.parsing.Trees.$anonfun$findLastEnclosingAt$4(Trees.scala:77)
+	at scala.Option.flatMap(Option.scala:271)
+	at scala.meta.internal.parsing.Trees.findLastEnclosingAt(Trees.scala:76)
+	at scala.meta.internal.metals.codeactions.PatternMatchRefactor.contribute(PatternMatchRefactor.scala:96)
+	at scala.meta.internal.metals.CodeActionProvider$$anonfun$1.applyOrElse(CodeActionProvider.scala:62)
+	at scala.meta.internal.metals.CodeActionProvider$$anonfun$1.applyOrElse(CodeActionProvider.scala:61)
+	at scala.collection.immutable.List.collect(List.scala:323)
+	at scala.meta.internal.metals.CodeActionProvider.codeActions(CodeActionProvider.scala:61)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeAction$1(MetalsLanguageServer.scala:1555)
+	at scala.meta.internal.metals.CancelTokens$.future(CancelTokens.scala:38)
+	at scala.meta.internal.metals.MetalsLanguageServer.codeAction(MetalsLanguageServer.scala:1554)
+	... 15 more
+
+[0m2021.11.12 14:31:07 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 14:31:23 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 14:31:38 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 14:32:11 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+Nov 12, 2021 2:32:39 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 22058
+[0m2021.11.12 14:33:38 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 14:34:19 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 14:34:23 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+Nov 12, 2021 2:38:56 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 22366
+[0m2021.11.12 14:39:12 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+[0m2021.11.12 14:40:38 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
