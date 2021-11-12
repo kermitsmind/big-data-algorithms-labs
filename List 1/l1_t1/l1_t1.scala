@@ -94,7 +94,7 @@ class WordAnalyzer(){
     def addSelectedDocumentIntoArray(file_name: String): Unit = {
         var resultWords : Array[String] = workingArrayOfWords ++ workingDocumentsMap(file_name)
         workingArrayOfWords = resultWords
-        loadedArrayDocuments = loadedArrayDocuments :+ documentName
+        loadedArrayDocuments = loadedArrayDocuments :+ file_name
     }
 
     def importAppendData(file_name: String): Array[String] = {
@@ -272,18 +272,30 @@ object MainObject {
                         var similarBooksArray: Array[String] = Array("gk_chesterton_1.txt", "gk_chesterton_2.txt",
                         "gk_chesterton_3.txt", "gk_chesterton_4.txt", "gk_chesterton_5.txt", "gk_chesterton_6.txt",
                         "gk_chesterton_7.txt", "gk_chesterton_8.txt", "gk_chesterton_9.txt", "gk_chesterton_10.txt")
+                        
+                        // refresh the app and load books into map
+                        wordAnalyzerObject.refreshMap()
+                        wordAnalyzerObject.refreshArray()
                         for (book <- similarBooksArray){
                             wordAnalyzerObject.importIntoDocumentsMap(book)
                         }
+                        
                         // compute word frequencies and save to csv files
                         for (book <- similarBooksArray){
                             wordAnalyzerObject.refreshArray()
                             wordAnalyzerObject.addSelectedDocumentIntoArray(file_name = book)
                             wordAnalyzerObject.removeElements()
+                            wordAnalyzerObject.countWordsFrequency()
                             wordAnalyzerObject.sortWordsMapDescending()
                             var fileName: String = "word_freq_" + book
                             wordAnalyzerObject.saveMapFirstN(n = 10000, resultCsvFileName = fileName)
                         }
+
+                        // compute TF-IDFs and save to csv files
+                        wordAnalyzerObject.refreshArray()
+                        for (book <- similarBooksArray){
+                            wordAnalyzerObject.addSelectedDocumentIntoArray(file_name = book)
+                        }                        
                         for (book <- similarBooksArray){
                             wordAnalyzerObject.computeDocument_TF_IDF(book)
                         }
@@ -291,21 +303,71 @@ object MainObject {
                     }
 
                     case "analyze all different books" => {
-                        var differentBooksArray: Array[String] = Array("arkawy.txt", "bcd.txt", "carter.txt", 
-                        "darwin.txt", "jorgensen.txt", "nesbitt.txt", "radziwill.txt", "shakespeare.txt", 
+                        var differentBooksArray: Array[String] = Array("carter.txt", 
+                        "darwin.txt", "king.txt", "nesbitt.txt", "post.txt", "radziwill.txt", "serviss.txt", "shakespeare.txt", 
                         "taylor.txt", "twain.txt")
+                        
+                        // refresh the app and load books into map
+                        wordAnalyzerObject.refreshMap()
+                        wordAnalyzerObject.refreshArray()
                         for (book <- differentBooksArray){
                             wordAnalyzerObject.importIntoDocumentsMap(book)
                         }
+                        
+                        // compute word frequencies and save to csv files
+                        for (book <- differentBooksArray){
+                            wordAnalyzerObject.refreshArray()
+                            wordAnalyzerObject.addSelectedDocumentIntoArray(file_name = book)
+                            wordAnalyzerObject.removeElements()
+                            wordAnalyzerObject.countWordsFrequency()
+                            wordAnalyzerObject.sortWordsMapDescending()
+                            var fileName: String = "word_freq_" + book
+                            wordAnalyzerObject.saveMapFirstN(n = 10000, resultCsvFileName = fileName)
+                        }
+
+                        // compute TF-IDFs and save to csv files
+                        wordAnalyzerObject.refreshArray()
+                        for (book <- differentBooksArray){
+                            wordAnalyzerObject.addSelectedDocumentIntoArray(file_name = book)
+                        }                        
+                        for (book <- differentBooksArray){
+                            wordAnalyzerObject.computeDocument_TF_IDF(book)
+                        }
+
                     }
 
                     case "analyze mixed books" => {
                         var mixedBooksArray: Array[String] = Array("gk_chesterton_1.txt", "gk_chesterton_2.txt",
                         "gk_chesterton_3.txt", "gk_chesterton_4.txt", "gk_chesterton_5.txt", "nesbitt.txt", "radziwill.txt", 
                         "shakespeare.txt", "taylor.txt", "twain.txt")
+                        
+                        // refresh the app and load books into map
+                        wordAnalyzerObject.refreshMap()
+                        wordAnalyzerObject.refreshArray()
                         for (book <- mixedBooksArray){
                             wordAnalyzerObject.importIntoDocumentsMap(book)
                         }
+                        
+                        // compute word frequencies and save to csv files
+                        for (book <- mixedBooksArray){
+                            wordAnalyzerObject.refreshArray()
+                            wordAnalyzerObject.addSelectedDocumentIntoArray(file_name = book)
+                            wordAnalyzerObject.removeElements()
+                            wordAnalyzerObject.countWordsFrequency()
+                            wordAnalyzerObject.sortWordsMapDescending()
+                            var fileName: String = "word_freq_" + book
+                            wordAnalyzerObject.saveMapFirstN(n = 10000, resultCsvFileName = fileName)
+                        }
+
+                        // compute TF-IDFs and save to csv files
+                        wordAnalyzerObject.refreshArray()
+                        for (book <- mixedBooksArray){
+                            wordAnalyzerObject.addSelectedDocumentIntoArray(file_name = book)
+                        }                        
+                        for (book <- mixedBooksArray){
+                            wordAnalyzerObject.computeDocument_TF_IDF(book)
+                        }                        
+
                     }
 
                     case "from map import into array" => {
