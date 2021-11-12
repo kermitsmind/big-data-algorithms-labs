@@ -91,10 +91,8 @@ class WordAnalyzer(){
         }
     }
 
-    def addSelectedDocumentIntoArray(): Unit = {
-        println("Document name: ")
-        val documentName = scala.io.StdIn.readLine()
-        var resultWords : Array[String] = workingArrayOfWords ++ workingDocumentsMap(documentName)
+    def addSelectedDocumentIntoArray(file_name: String): Unit = {
+        var resultWords : Array[String] = workingArrayOfWords ++ workingDocumentsMap(file_name)
         workingArrayOfWords = resultWords
         loadedArrayDocuments = loadedArrayDocuments :+ documentName
     }
@@ -270,9 +268,51 @@ object MainObject {
                         wordAnalyzerObject.importIntoDocumentsMap(fileName)
                     }
 
+                    case "analyze all similar books" => {
+                        var similarBooksArray: Array[String] = Array("gk_chesterton_1.txt", "gk_chesterton_2.txt",
+                        "gk_chesterton_3.txt", "gk_chesterton_4.txt", "gk_chesterton_5.txt", "gk_chesterton_6.txt",
+                        "gk_chesterton_7.txt", "gk_chesterton_8.txt", "gk_chesterton_9.txt", "gk_chesterton_10.txt")
+                        for (book <- similarBooksArray){
+                            wordAnalyzerObject.importIntoDocumentsMap(book)
+                        }
+                        // compute word frequencies and save to csv files
+                        for (book <- similarBooksArray){
+                            wordAnalyzerObject.refreshArray()
+                            wordAnalyzerObject.addSelectedDocumentIntoArray(file_name = book)
+                            wordAnalyzerObject.removeElements()
+                            wordAnalyzerObject.sortWordsMapDescending()
+                            var fileName: String = "word_freq_" + book
+                            wordAnalyzerObject.saveMapFirstN(n = 10000, resultCsvFileName = fileName)
+                        }
+                        for (book <- similarBooksArray){
+                            wordAnalyzerObject.computeDocument_TF_IDF(book)
+                        }
+
+                    }
+
+                    case "analyze all different books" => {
+                        var differentBooksArray: Array[String] = Array("arkawy.txt", "bcd.txt", "carter.txt", 
+                        "darwin.txt", "jorgensen.txt", "nesbitt.txt", "radziwill.txt", "shakespeare.txt", 
+                        "taylor.txt", "twain.txt")
+                        for (book <- differentBooksArray){
+                            wordAnalyzerObject.importIntoDocumentsMap(book)
+                        }
+                    }
+
+                    case "analyze mixed books" => {
+                        var mixedBooksArray: Array[String] = Array("gk_chesterton_1.txt", "gk_chesterton_2.txt",
+                        "gk_chesterton_3.txt", "gk_chesterton_4.txt", "gk_chesterton_5.txt", "nesbitt.txt", "radziwill.txt", 
+                        "shakespeare.txt", "taylor.txt", "twain.txt")
+                        for (book <- mixedBooksArray){
+                            wordAnalyzerObject.importIntoDocumentsMap(book)
+                        }
+                    }
+
                     case "from map import into array" => {
                         // add document from map into array for further actions
-                        wordAnalyzerObject.addSelectedDocumentIntoArray()
+                        print("File name: ")
+                        var fileName = scala.io.StdIn.readLine()
+                        wordAnalyzerObject.addSelectedDocumentIntoArray(file_name = fileName)
                     }
 
                     case "import append data" => {

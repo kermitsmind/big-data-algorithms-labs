@@ -33953,3 +33953,51 @@ Nov 12, 2021 2:38:56 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellat
 WARNING: Unmatched cancel notification for request id 22366
 [0m2021.11.12 14:39:12 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
 [0m2021.11.12 14:40:38 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t2/l1_t2.scala[0m
+Nov 12, 2021 2:55:59 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 22593
+Nov 12, 2021 3:27:52 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 22610
+Nov 12, 2021 3:27:54 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 22617
+Nov 12, 2021 3:49:05 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 22839
+[0m2021.11.12 15:49:28 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t1/l1_t1.scala[0m
+[0m2021.11.12 15:51:13 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t1/l1_t1.scala[0m
+[0m2021.11.12 15:51:43 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t1/l1_t1.scala[0m
+[0m2021.11.12 15:51:54 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t1/l1_t1.scala[0m
+[0m2021.11.12 15:52:10 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t1/l1_t1.scala[0m
+[0m2021.11.12 15:52:19 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t1/l1_t1.scala[0m
+[0m2021.11.12 15:52:29 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t1/l1_t1.scala[0m
+[0m2021.11.12 15:53:11 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t1/l1_t1.scala[0m
+[0m2021.11.12 15:53:15 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t1/l1_t1.scala[0m
+[0m2021.11.12 15:59:09 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t1/l1_t1.scala[0m
+[0m2021.11.12 16:00:16 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t1/l1_t1.scala[0m
+[0m2021.11.12 16:01:53 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t1/l1_t1.scala[0m
+[0m2021.11.12 16:03:14 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t1/l1_t1.scala[0m
+Nov 12, 2021 4:06:21 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 24368
+[0m2021.11.12 16:06:31 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t1/l1_t1.scala[0m
+[0m2021.11.12 16:07:00 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t1/l1_t1.scala[0m
+[0m2021.11.12 16:07:23 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t1/l1_t1.scala[0m
+[0m2021.11.12 16:07:45 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t1/l1_t1.scala[0m
+[0m2021.11.12 16:09:00 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t1/l1_t1.scala[0m
+[0m2021.11.12 16:09:03 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t1/l1_t1.scala[0m
+[0m2021.11.12 16:09:48 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t1/l1_t1.scala[0m
+[0m2021.11.12 16:10:02 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t1/l1_t1.scala[0m
+[0m2021.11.12 16:10:06 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t1/l1_t1.scala[0m
+[0m2021.11.12 16:11:34 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t1/l1_t1.scala[0m
+[0m2021.11.12 16:12:20 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t1/l1_t1.scala[0m
+Nov 12, 2021 4:12:59 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 24914
+[0m2021.11.12 16:13:10 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t1/l1_t1.scala[0m
+[0m2021.11.12 16:16:35 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t1/l1_t1.scala[0m
+[0m2021.11.12 16:17:39 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t1/l1_t1.scala[0m
+[0m2021.11.12 16:18:28 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t1/l1_t1.scala[0m
+[0m2021.11.12 16:19:34 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t1/l1_t1.scala[0m
+[0m2021.11.12 16:23:18 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t1/l1_t1.scala[0m
+[0m2021.11.12 16:24:37 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t1/l1_t1.scala[0m
+[0m2021.11.12 16:25:33 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t1/l1_t1.scala[0m
+[0m2021.11.12 16:28:15 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t1/l1_t1.scala[0m
+[0m2021.11.12 16:28:55 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t1/l1_t1.scala[0m
+[0m2021.11.12 16:29:10 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t1/l1_t1.scala[0m
+[0m2021.11.12 16:29:12 WARN  no build target for: /Users/michal/Documents/Study/MSc/Semester II/Big data algorithms/Laboratories/List 1/l1_t1/l1_t1.scala[0m
