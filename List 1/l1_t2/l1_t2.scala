@@ -4,18 +4,19 @@ import scala.collection.immutable.ListMap
 class MapReduce(){
     def Map(input: List[Tuple2[Int, List[Int]]]): List[Tuple2[Int, Int]] = {
         var outputList: List[Tuple2[Int, Int]] = List()
-        for (row <- input){
-            val node: Int = row._1
-            val edges: List[Int] = row._2
-            if (edges.length != 0){
-                for (edge <- edges){
-                    outputList = outputList :+ (node, edge)
-                }
-            }else{
-                outputList = outputList :+ (node, node)
-            }
-        }
-        return outputList
+        val output = input.map((node, edges) => edges.map(edge => (edge,node))).flatten
+        // for (row <- input){
+        //     val node: Int = row._1
+        //     val edges: List[Int] = row._2
+        //     if (edges.length != 0){
+        //         for (edge <- edges){
+        //             outputList = outputList :+ (node, edge)
+        //         }
+        //     }else{
+        //         outputList = outputList :+ (node, node)
+        //     }
+        // }
+        return output
     }
 
     def Reduce(input: List[Tuple2[Int, Int]]): List[Tuple2[Int, List[Int]]] = {

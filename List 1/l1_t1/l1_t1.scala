@@ -270,8 +270,7 @@ object MainObject {
 
                     case "analyze all similar books" => {
                         var similarBooksArray: Array[String] = Array("gk_chesterton_1.txt", "gk_chesterton_2.txt",
-                        "gk_chesterton_3.txt", "gk_chesterton_4.txt", "gk_chesterton_5.txt", "gk_chesterton_6.txt",
-                        "gk_chesterton_7.txt", "gk_chesterton_8.txt", "gk_chesterton_9.txt", "gk_chesterton_10.txt")
+                        "gk_chesterton_3.txt", "gk_chesterton_4.txt", "gk_chesterton_5.txt")
                         
                         // refresh the app and load books into map
                         wordAnalyzerObject.refreshMap()
@@ -282,23 +281,23 @@ object MainObject {
                         
                         // compute word frequencies and save to csv files
                         for (book <- similarBooksArray){
-                            wordAnalyzerObject.refreshArray()
+                            // wordAnalyzerObject.refreshArray()
                             wordAnalyzerObject.addSelectedDocumentIntoArray(file_name = book)
-                            wordAnalyzerObject.removeElements()
-                            wordAnalyzerObject.countWordsFrequency()
-                            wordAnalyzerObject.sortWordsMapDescending()
-                            var fileName: String = "word_freq_" + book
-                            wordAnalyzerObject.saveMapFirstN(n = 10000, resultCsvFileName = fileName)
+                            // wordAnalyzerObject.removeElements()
+                            // wordAnalyzerObject.countWordsFrequency()
+                            // wordAnalyzerObject.sortWordsMapDescending()
+                            // var fileName: String = "word_freq_" + book
+                            // wordAnalyzerObject.saveMapFirstN(n = 10000, resultCsvFileName = fileName)
                         }
 
                         // compute TF-IDFs and save to csv files
-                        wordAnalyzerObject.refreshArray()
-                        for (book <- similarBooksArray){
-                            wordAnalyzerObject.addSelectedDocumentIntoArray(file_name = book)
-                        }                        
-                        for (book <- similarBooksArray){
-                            wordAnalyzerObject.computeDocument_TF_IDF(book)
-                        }
+                        // wordAnalyzerObject.refreshArray()
+                        // for (book <- similarBooksArray){
+                        //     wordAnalyzerObject.addSelectedDocumentIntoArray(file_name = book)
+                        // }                        
+                        // for (book <- similarBooksArray){
+                        //     wordAnalyzerObject.computeDocument_TF_IDF(book)
+                        // }
 
                     }
 
