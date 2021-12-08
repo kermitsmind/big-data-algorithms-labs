@@ -2,6 +2,7 @@ import scala.io.Source
 import scala.collection.concurrent
 import scala.collection.immutable.ListMap
 import java.io._
+import scala.math._
 
 object MainObject{
 
@@ -60,19 +61,68 @@ object MainObject{
         return shinglesFrequencyMap.keys.toArray
     }
 
-    def main(args: Array[String]) = {
+    def generateBookShingles(book_name: String, k: Int): Set[String] = {
         // loading stopwords
         val stopWordsFileName: String = "stop_words_english.txt"
         val stopWordsStringArray: Array[String] = importData(file_name = stopWordsFileName)
         
         // loading a book
-        var bookFileName: String = "books/gk_chesterton_1.txt"
-        var initialStringArray: Array[String] = importData(file_name = bookFileName)
+        var initialStringArray: Array[String] = importData(file_name = book_name)
         var filteredStringArray: Array[String] = removeElements(initialArray = initialStringArray, toBeRemovedArray = stopWordsStringArray)
         
         // creating k-shigles out of the book words (shingles does not repeat)
-        var k: Int = 4
         var shinglesArray: Array[String] = convertStringArrayIntoShinglesArray(givenArray = filteredStringArray, k = k)
+
+        // return shingles array
+        return shinglesArray.toSet
+    }
+
+    def computeJaccardSimilarity(bookNameA: String, bookNameB: String, k: Int): Float = {
+        // generate shingle arrays
+        var shinglesA = generateBookShingles(book_name = bookNameA, k = k)
+        var shinglesB = generateBookShingles(book_name = bookNameB, k = k)
         
+        // compute intersction and union
+        val intersection: Set[String] = shinglesA.intersect(shinglesB)
+        val union: Set[String] = shinglesA.union(shinglesB)
+        
+        // compute Jaccard similarity
+        val jaccardSimilarity: Float = (intersection.size.toFloat) / (union.size.toFloat)
+        
+        return jaccardSimilarity
+    }
+
+
+    def main(args: Array[String]) = {
+
+        // book name array
+        var mixedBooksArray: Array[String] = Array("gk_chesterton_1.txt", "gk_chesterton_2.txt",
+                        "gk_chesterton_3.txt", "gk_chesterton_4.txt", "gk_chesterton_5.txt", "king.txt", "radziwill.txt", 
+                        "shakespeare.txt", "taylor.txt", "twain.txt")
+        
+        // open file writer to save results
+        val fileWriter = new FileWriter("l2_t2_results.txt", true)
+        
+        // outer book loop
+        for (bookA <- mixedBooksArray){
+            var bookPathA: String = "books/".concat(bookA)
+            
+            // inner book loop
+            for (bookB <- mixedBooksArray){
+                var bookPathB: String = "books/".concat(bookB)
+                
+                // k value loop
+                for (k <- 4 to 13){
+                    // compute jaccard similarity 
+                    val jaccardSimilarity: Float = computeJaccardSimilarity(bookNameA = bookPathA, bookNameB = bookPathB, k = k)
+                    
+                    //save result to a file
+                    fileWriter.write("Jacc Sim of: " + bookA.toString + " and: " + bookB.toString + " = " + jaccardSimilarity.toString)
+                    fileWriter.write("\n")
+                }
+            }
+        }
+        // close file writer
+        fileWriter.close()
     }
 }
