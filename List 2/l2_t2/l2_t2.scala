@@ -96,26 +96,32 @@ object MainObject{
     def main(args: Array[String]) = {
 
         // book name array
-        var mixedBooksArray: Array[String] = Array("gk_chesterton_1.txt", "gk_chesterton_2.txt",
-                        "gk_chesterton_3.txt", "gk_chesterton_4.txt", "gk_chesterton_5.txt", "king.txt", "radziwill.txt", 
-                        "shakespeare.txt", "taylor.txt", "twain.txt")
+        var mixedBooksArray1: Array[String] = Array("gk_chesterton_1.txt", "gk_chesterton_2.txt",
+                        "gk_chesterton_3.txt")
+        var mixedBooksArray2: Array[String] = Array("king.txt", "radziwill.txt", 
+                        "shakespeare.txt")
         
         // open file writer to save results
         val fileWriter = new FileWriter("l2_t2_results.txt", true)
         
         // outer book loop
-        for (bookA <- mixedBooksArray){
+        for (bookA <- mixedBooksArray1){
             var bookPathA: String = "books/".concat(bookA)
+            println("bookA: " + bookA)
             
             // inner book loop
-            for (bookB <- mixedBooksArray){
+            for (bookB <- mixedBooksArray2){
                 var bookPathB: String = "books/".concat(bookB)
+                println("bookB: " + bookB)
                 
                 // k value loop
                 for (k <- 4 to 13){
+                    println("k: " + k.toString)
+
                     // compute jaccard similarity 
                     val jaccardSimilarity: Float = computeJaccardSimilarity(bookNameA = bookPathA, bookNameB = bookPathB, k = k)
-                    
+                    println("jacc sim: " + jaccardSimilarity.toString)
+
                     //save result to a file
                     fileWriter.write("Jacc Sim of: " + bookA.toString + " and: " + bookB.toString + " = " + jaccardSimilarity.toString)
                     fileWriter.write("\n")
