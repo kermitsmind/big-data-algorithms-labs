@@ -108,36 +108,18 @@ object MainObject{
         return arrayOuter
     }
 
-
-
-    def main(args: Array[String]) = {
-
-        // book name array
-        var mixedBooksArray1: Array[String] = Array("gk_chesterton_1.txt", "gk_chesterton_2.txt",
-                        "gk_chesterton_3.txt")
-        var mixedBooksArray2: Array[String] = Array("king.txt", "radziwill.txt", 
-                        "shakespeare.txt")
-        var testArray: Array[String] = Array("books/test.txt", "books/test2.txt", 
-                        "books/test3.txt")
-
-        // shingle length
-        var k: Int = 4
-
-        // no. of hash functions
-        var n: Int = 10
-        
+    def createSignatureMatrix(arrayOfDocumentNames: Array[String], n: Int, k: Int): Array[Array[Int]] = {
         // create union set of shingles common for all the books
-        var commonShingles: Set[String] = generateBookShingles(book_name = testArray(0), k = k)
+        var commonShingles: Set[String] = generateBookShingles(book_name = arrayOfDocumentNames(0), k = k)
         var tempShingles: Set[String] = Set()
-        for (book <- testArray){
+        for (book <- arrayOfDocumentNames){
             tempShingles = generateBookShingles(book_name = book, k = k)
             commonShingles = commonShingles.union(tempShingles)
-
         }
         
         // create initial signatue matrix
         var initialSignatureMatrix: Array[Array[Int]] = Array()
-        for (book <- testArray){
+        for (book <- arrayOfDocumentNames){
             var columnSignature: Array[Int] = Array()
             var setShingles: Set[String] = generateBookShingles(book_name = book, k = k)
             for (shingle <- commonShingles){
@@ -149,11 +131,11 @@ object MainObject{
             }
             initialSignatureMatrix = initialSignatureMatrix :+ columnSignature
         }
-
+    
         // initialize final signatue matrix
         var finalSignatureMatrix: Array[Array[Int]] = Array()
         val maxCommonSetValue: Int = commonShingles.size + 1
-        for (book <- testArray){
+        for (book <- arrayOfDocumentNames){
             var columnSignature: Array[Int] = Array()
             var setShingles: Set[String] = generateBookShingles(book_name = book, k = k)
             for (_ <- 0 to (n - 1)){
@@ -161,7 +143,7 @@ object MainObject{
             }
             finalSignatureMatrix = finalSignatureMatrix :+ columnSignature
         }
-
+    
         var hashTable: Array[Array[Int]] = generateRandomHashingTables(set = commonShingles, n = n)
         var signatureMatrixValue: Int = 0
         var hashTableValue: Int = 0
@@ -177,21 +159,61 @@ object MainObject{
                 }
             }
         }
-        // print for checking
-        println("\ninit:")
-        for (column <- initialSignatureMatrix){
-            for (row <- column){
-                print(row)
-            }
-            print("\n")
-        }
-        println("\nfinal:")
-        for (column <- finalSignatureMatrix){
-            for (row <- column){
-                print(row)
-            }
-            print("\n")
-        }
+        return finalSignatureMatrix
+    }
 
+    def computeJaccardSimilarityOnSignatures(signatureA: Array[Int], signatureB: Array[Int]): Float = {        
+        // compute intersction and union
+        val intersection: Set[Int] = signatureA.toSet.intersect(signatureB.toSet)
+        val union: Set[Int] = signatureA.toSet.union(signatureB.toSet)
+        
+        // compute Jaccard similarity
+        val jaccardSimilarity: Float = (intersection.size.toFloat) / (union.size.toFloat)
+        
+        return jaccardSimilarity
+    }    
+
+    def main(args: Array[String]) = {
+
+        // book name array
+        var booksArray: Array[String] = Array("books/gk_chesterton_1.txt", "books/gk_chesterton_2.txt",
+                        "books/gk_chesterton_3.txt", "books/king.txt", "books/radziwill.txt", "books/shakespeare.txt")
+        var testArray: Array[String] = Array("books/test.txt", "books/test2.txt", "books/test3.txt")
+
+        // no. of hash functions
+        var nRange: List[Int] = List(10, 100, 250, 500)
+
+        // compute signature matrix
+        var signatureMatrix: Array[Array[Int]] = Array()
+
+        
+        // calculate jaccard similarities
+        val documentsArray: Array[String] = booksArray
+        var jaccardSimilarity: Float = 0
+        
+        for (k <- 4 to 13){
+            for (n <- nRange){
+                // open file writer to save results
+                val fileWriter = new FileWriter("l2_t3_results.txt", true)
+                
+                signatureMatrix = createSignatureMatrix(arrayOfDocumentNames = documentsArray, n = n, k = k)
+                print("\nk: " + k + " n: " + n)
+                fileWriter.write("\nk: " + k + " n: " + n + "\n")
+                fileWriter.write("\n")
+                
+                for (signatureIndexA <- 0 to 2){
+                    for (signatureIndexB <- 3 to (signatureMatrix.size - 1)){
+                        print("\n" + documentsArray(signatureIndexA) + " " + documentsArray(signatureIndexB))
+                        jaccardSimilarity = computeJaccardSimilarityOnSignatures(signatureMatrix(signatureIndexA), signatureMatrix(signatureIndexB))
+                        print(" = " + jaccardSimilarity.toString)
+                        fileWriter.write("jacc sim of: " + documentsArray(signatureIndexA) + " and " + documentsArray(signatureIndexB) + " = " + jaccardSimilarity.toString)
+                        fileWriter.write("\n")
+                    }
+                }
+                
+                // close file writer
+                fileWriter.close()
+            }
+        }
     }
 }

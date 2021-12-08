@@ -1,0 +1,480 @@
+
+k: 4 n: 10
+
+jacc sim of: books/gk_chesterton_1.txt and books/king.txt = 0.6
+jacc sim of: books/gk_chesterton_1.txt and books/radziwill.txt = 0.33333334
+jacc sim of: books/gk_chesterton_1.txt and books/shakespeare.txt = 0.375
+jacc sim of: books/gk_chesterton_2.txt and books/king.txt = 0.4
+jacc sim of: books/gk_chesterton_2.txt and books/radziwill.txt = 0.16666667
+jacc sim of: books/gk_chesterton_2.txt and books/shakespeare.txt = 0.42857143
+jacc sim of: books/gk_chesterton_3.txt and books/king.txt = 0.6
+jacc sim of: books/gk_chesterton_3.txt and books/radziwill.txt = 0.33333334
+jacc sim of: books/gk_chesterton_3.txt and books/shakespeare.txt = 0.375
+
+k: 4 n: 100
+
+jacc sim of: books/gk_chesterton_1.txt and books/king.txt = 0.8333333
+jacc sim of: books/gk_chesterton_1.txt and books/radziwill.txt = 0.71428573
+jacc sim of: books/gk_chesterton_1.txt and books/shakespeare.txt = 0.5
+jacc sim of: books/gk_chesterton_2.txt and books/king.txt = 0.625
+jacc sim of: books/gk_chesterton_2.txt and books/radziwill.txt = 0.75
+jacc sim of: books/gk_chesterton_2.txt and books/shakespeare.txt = 0.6666667
+jacc sim of: books/gk_chesterton_3.txt and books/king.txt = 0.5555556
+jacc sim of: books/gk_chesterton_3.txt and books/radziwill.txt = 0.6666667
+jacc sim of: books/gk_chesterton_3.txt and books/shakespeare.txt = 0.61538464
+
+k: 4 n: 250
+
+jacc sim of: books/gk_chesterton_1.txt and books/king.txt = 0.7777778
+jacc sim of: books/gk_chesterton_1.txt and books/radziwill.txt = 0.5833333
+jacc sim of: books/gk_chesterton_1.txt and books/shakespeare.txt = 0.5714286
+jacc sim of: books/gk_chesterton_2.txt and books/king.txt = 1.0
+jacc sim of: books/gk_chesterton_2.txt and books/radziwill.txt = 0.72727275
+jacc sim of: books/gk_chesterton_2.txt and books/shakespeare.txt = 0.5714286
+jacc sim of: books/gk_chesterton_3.txt and books/king.txt = 0.6666667
+jacc sim of: books/gk_chesterton_3.txt and books/radziwill.txt = 0.9166667
+jacc sim of: books/gk_chesterton_3.txt and books/shakespeare.txt = 0.73333335
+
+k: 4 n: 500
+
+jacc sim of: books/gk_chesterton_1.txt and books/king.txt = 0.7777778
+jacc sim of: books/gk_chesterton_1.txt and books/radziwill.txt = 0.75
+jacc sim of: books/gk_chesterton_1.txt and books/shakespeare.txt = 0.5625
+jacc sim of: books/gk_chesterton_2.txt and books/king.txt = 0.7
+jacc sim of: books/gk_chesterton_2.txt and books/radziwill.txt = 0.6923077
+jacc sim of: books/gk_chesterton_2.txt and books/shakespeare.txt = 0.625
+jacc sim of: books/gk_chesterton_3.txt and books/king.txt = 0.5
+jacc sim of: books/gk_chesterton_3.txt and books/radziwill.txt = 0.73333335
+jacc sim of: books/gk_chesterton_3.txt and books/shakespeare.txt = 0.7647059
+
+k: 5 n: 10
+
+jacc sim of: books/gk_chesterton_1.txt and books/king.txt = 0.8
+jacc sim of: books/gk_chesterton_1.txt and books/radziwill.txt = 0.6
+jacc sim of: books/gk_chesterton_1.txt and books/shakespeare.txt = 0.18181819
+jacc sim of: books/gk_chesterton_2.txt and books/king.txt = 0.33333334
+jacc sim of: books/gk_chesterton_2.txt and books/radziwill.txt = 0.4
+jacc sim of: books/gk_chesterton_2.txt and books/shakespeare.txt = 0.2
+jacc sim of: books/gk_chesterton_3.txt and books/king.txt = 0.25
+jacc sim of: books/gk_chesterton_3.txt and books/radziwill.txt = 0.2857143
+jacc sim of: books/gk_chesterton_3.txt and books/shakespeare.txt = 0.27272728
+
+k: 5 n: 100
+
+jacc sim of: books/gk_chesterton_1.txt and books/king.txt = 0.625
+jacc sim of: books/gk_chesterton_1.txt and books/radziwill.txt = 0.7777778
+jacc sim of: books/gk_chesterton_1.txt and books/shakespeare.txt = 0.46666667
+jacc sim of: books/gk_chesterton_2.txt and books/king.txt = 0.54545456
+jacc sim of: books/gk_chesterton_2.txt and books/radziwill.txt = 0.8181818
+jacc sim of: books/gk_chesterton_2.txt and books/shakespeare.txt = 0.73333335
+jacc sim of: books/gk_chesterton_3.txt and books/king.txt = 0.6666667
+jacc sim of: books/gk_chesterton_3.txt and books/radziwill.txt = 1.0
+jacc sim of: books/gk_chesterton_3.txt and books/shakespeare.txt = 0.6
+
+k: 5 n: 250
+
+jacc sim of: books/gk_chesterton_1.txt and books/king.txt = 0.8
+jacc sim of: books/gk_chesterton_1.txt and books/radziwill.txt = 0.8333333
+jacc sim of: books/gk_chesterton_1.txt and books/shakespeare.txt = 0.45454547
+jacc sim of: books/gk_chesterton_2.txt and books/king.txt = 0.6666667
+jacc sim of: books/gk_chesterton_2.txt and books/radziwill.txt = 0.84615386
+jacc sim of: books/gk_chesterton_2.txt and books/shakespeare.txt = 0.54545456
+jacc sim of: books/gk_chesterton_3.txt and books/king.txt = 0.61538464
+jacc sim of: books/gk_chesterton_3.txt and books/radziwill.txt = 0.9230769
+jacc sim of: books/gk_chesterton_3.txt and books/shakespeare.txt = 0.59090906
+
+k: 5 n: 500
+
+jacc sim of: books/gk_chesterton_1.txt and books/king.txt = 0.6666667
+jacc sim of: books/gk_chesterton_1.txt and books/radziwill.txt = 0.6666667
+jacc sim of: books/gk_chesterton_1.txt and books/shakespeare.txt = 0.5555556
+jacc sim of: books/gk_chesterton_2.txt and books/king.txt = 0.6666667
+jacc sim of: books/gk_chesterton_2.txt and books/radziwill.txt = 0.7647059
+jacc sim of: books/gk_chesterton_2.txt and books/shakespeare.txt = 0.8333333
+jacc sim of: books/gk_chesterton_3.txt and books/king.txt = 0.6666667
+jacc sim of: books/gk_chesterton_3.txt and books/radziwill.txt = 0.7647059
+jacc sim of: books/gk_chesterton_3.txt and books/shakespeare.txt = 0.8333333
+
+k: 6 n: 10
+
+jacc sim of: books/gk_chesterton_1.txt and books/king.txt = 0.5
+jacc sim of: books/gk_chesterton_1.txt and books/radziwill.txt = 0.5714286
+jacc sim of: books/gk_chesterton_1.txt and books/shakespeare.txt = 0.5
+jacc sim of: books/gk_chesterton_2.txt and books/king.txt = 1.0
+jacc sim of: books/gk_chesterton_2.txt and books/radziwill.txt = 0.33333334
+jacc sim of: books/gk_chesterton_2.txt and books/shakespeare.txt = 0.33333334
+jacc sim of: books/gk_chesterton_3.txt and books/king.txt = 0.75
+jacc sim of: books/gk_chesterton_3.txt and books/radziwill.txt = 0.2857143
+jacc sim of: books/gk_chesterton_3.txt and books/shakespeare.txt = 0.44444445
+
+k: 6 n: 100
+
+jacc sim of: books/gk_chesterton_1.txt and books/king.txt = 0.8181818
+jacc sim of: books/gk_chesterton_1.txt and books/radziwill.txt = 0.75
+jacc sim of: books/gk_chesterton_1.txt and books/shakespeare.txt = 0.57894737
+jacc sim of: books/gk_chesterton_2.txt and books/king.txt = 0.6666667
+jacc sim of: books/gk_chesterton_2.txt and books/radziwill.txt = 0.75
+jacc sim of: books/gk_chesterton_2.txt and books/shakespeare.txt = 0.57894737
+jacc sim of: books/gk_chesterton_3.txt and books/king.txt = 0.61538464
+jacc sim of: books/gk_chesterton_3.txt and books/radziwill.txt = 0.6923077
+jacc sim of: books/gk_chesterton_3.txt and books/shakespeare.txt = 0.55
+
+k: 6 n: 250
+
+jacc sim of: books/gk_chesterton_1.txt and books/king.txt = 0.6666667
+jacc sim of: books/gk_chesterton_1.txt and books/radziwill.txt = 0.5714286
+jacc sim of: books/gk_chesterton_1.txt and books/shakespeare.txt = 0.33333334
+jacc sim of: books/gk_chesterton_2.txt and books/king.txt = 0.46666667
+jacc sim of: books/gk_chesterton_2.txt and books/radziwill.txt = 0.7058824
+jacc sim of: books/gk_chesterton_2.txt and books/shakespeare.txt = 0.56
+jacc sim of: books/gk_chesterton_3.txt and books/king.txt = 0.4117647
+jacc sim of: books/gk_chesterton_3.txt and books/radziwill.txt = 0.6315789
+jacc sim of: books/gk_chesterton_3.txt and books/shakespeare.txt = 0.64
+
+k: 6 n: 500
+
+jacc sim of: books/gk_chesterton_1.txt and books/king.txt = 0.9166667
+jacc sim of: books/gk_chesterton_1.txt and books/radziwill.txt = 0.6875
+jacc sim of: books/gk_chesterton_1.txt and books/shakespeare.txt = 0.36666667
+jacc sim of: books/gk_chesterton_2.txt and books/king.txt = 0.75
+jacc sim of: books/gk_chesterton_2.txt and books/radziwill.txt = 0.88235295
+jacc sim of: books/gk_chesterton_2.txt and books/shakespeare.txt = 0.53333336
+jacc sim of: books/gk_chesterton_3.txt and books/king.txt = 0.6666667
+jacc sim of: books/gk_chesterton_3.txt and books/radziwill.txt = 0.7894737
+jacc sim of: books/gk_chesterton_3.txt and books/shakespeare.txt = 0.6
+
+k: 7 n: 10
+
+jacc sim of: books/gk_chesterton_1.txt and books/king.txt = 0.6
+jacc sim of: books/gk_chesterton_1.txt and books/radziwill.txt = 0.5
+jacc sim of: books/gk_chesterton_1.txt and books/shakespeare.txt = 0.2
+jacc sim of: books/gk_chesterton_2.txt and books/king.txt = 0.33333334
+jacc sim of: books/gk_chesterton_2.txt and books/radziwill.txt = 0.33333334
+jacc sim of: books/gk_chesterton_2.txt and books/shakespeare.txt = 0.2
+jacc sim of: books/gk_chesterton_3.txt and books/king.txt = 0.5
+jacc sim of: books/gk_chesterton_3.txt and books/radziwill.txt = 0.625
+jacc sim of: books/gk_chesterton_3.txt and books/shakespeare.txt = 0.3
+
+k: 7 n: 100
+
+jacc sim of: books/gk_chesterton_1.txt and books/king.txt = 0.72727275
+jacc sim of: books/gk_chesterton_1.txt and books/radziwill.txt = 0.6
+jacc sim of: books/gk_chesterton_1.txt and books/shakespeare.txt = 0.375
+jacc sim of: books/gk_chesterton_2.txt and books/king.txt = 0.6666667
+jacc sim of: books/gk_chesterton_2.txt and books/radziwill.txt = 0.78571427
+jacc sim of: books/gk_chesterton_2.txt and books/shakespeare.txt = 0.47826087
+jacc sim of: books/gk_chesterton_3.txt and books/king.txt = 0.5714286
+jacc sim of: books/gk_chesterton_3.txt and books/radziwill.txt = 0.6875
+jacc sim of: books/gk_chesterton_3.txt and books/shakespeare.txt = 0.5
+
+k: 7 n: 250
+
+jacc sim of: books/gk_chesterton_1.txt and books/king.txt = 1.0
+jacc sim of: books/gk_chesterton_1.txt and books/radziwill.txt = 0.8
+jacc sim of: books/gk_chesterton_1.txt and books/shakespeare.txt = 0.44444445
+jacc sim of: books/gk_chesterton_2.txt and books/king.txt = 0.75
+jacc sim of: books/gk_chesterton_2.txt and books/radziwill.txt = 0.9375
+jacc sim of: books/gk_chesterton_2.txt and books/shakespeare.txt = 0.5925926
+jacc sim of: books/gk_chesterton_3.txt and books/king.txt = 0.73333335
+jacc sim of: books/gk_chesterton_3.txt and books/radziwill.txt = 0.8125
+jacc sim of: books/gk_chesterton_3.txt and books/shakespeare.txt = 0.5185185
+
+k: 7 n: 500
+
+jacc sim of: books/gk_chesterton_1.txt and books/king.txt = 1.0
+jacc sim of: books/gk_chesterton_1.txt and books/radziwill.txt = 0.7222222
+jacc sim of: books/gk_chesterton_1.txt and books/shakespeare.txt = 0.3783784
+jacc sim of: books/gk_chesterton_2.txt and books/king.txt = 0.875
+jacc sim of: books/gk_chesterton_2.txt and books/radziwill.txt = 0.7368421
+jacc sim of: books/gk_chesterton_2.txt and books/shakespeare.txt = 0.43243244
+jacc sim of: books/gk_chesterton_3.txt and books/king.txt = 0.7222222
+jacc sim of: books/gk_chesterton_3.txt and books/radziwill.txt = 0.7
+jacc sim of: books/gk_chesterton_3.txt and books/shakespeare.txt = 0.45945945
+
+k: 8 n: 10
+
+jacc sim of: books/gk_chesterton_1.txt and books/king.txt = 0.6666667
+jacc sim of: books/gk_chesterton_1.txt and books/radziwill.txt = 0.375
+jacc sim of: books/gk_chesterton_1.txt and books/shakespeare.txt = 0.36363637
+jacc sim of: books/gk_chesterton_2.txt and books/king.txt = 0.42857143
+jacc sim of: books/gk_chesterton_2.txt and books/radziwill.txt = 0.375
+jacc sim of: books/gk_chesterton_2.txt and books/shakespeare.txt = 0.5
+jacc sim of: books/gk_chesterton_3.txt and books/king.txt = 0.33333334
+jacc sim of: books/gk_chesterton_3.txt and books/radziwill.txt = 0.3
+jacc sim of: books/gk_chesterton_3.txt and books/shakespeare.txt = 0.54545456
+
+k: 8 n: 100
+
+jacc sim of: books/gk_chesterton_1.txt and books/king.txt = 0.8333333
+jacc sim of: books/gk_chesterton_1.txt and books/radziwill.txt = 0.6923077
+jacc sim of: books/gk_chesterton_1.txt and books/shakespeare.txt = 0.3846154
+jacc sim of: books/gk_chesterton_2.txt and books/king.txt = 0.71428573
+jacc sim of: books/gk_chesterton_2.txt and books/radziwill.txt = 1.0
+jacc sim of: books/gk_chesterton_2.txt and books/shakespeare.txt = 0.35714287
+jacc sim of: books/gk_chesterton_3.txt and books/king.txt = 0.8333333
+jacc sim of: books/gk_chesterton_3.txt and books/radziwill.txt = 0.8333333
+jacc sim of: books/gk_chesterton_3.txt and books/shakespeare.txt = 0.3846154
+
+k: 8 n: 250
+
+jacc sim of: books/gk_chesterton_1.txt and books/king.txt = 0.71428573
+jacc sim of: books/gk_chesterton_1.txt and books/radziwill.txt = 0.8125
+jacc sim of: books/gk_chesterton_1.txt and books/shakespeare.txt = 0.4
+jacc sim of: books/gk_chesterton_2.txt and books/king.txt = 0.625
+jacc sim of: books/gk_chesterton_2.txt and books/radziwill.txt = 0.8235294
+jacc sim of: books/gk_chesterton_2.txt and books/shakespeare.txt = 0.41666666
+jacc sim of: books/gk_chesterton_3.txt and books/king.txt = 0.5
+jacc sim of: books/gk_chesterton_3.txt and books/radziwill.txt = 0.75
+jacc sim of: books/gk_chesterton_3.txt and books/shakespeare.txt = 0.5714286
+
+k: 8 n: 500
+
+jacc sim of: books/gk_chesterton_1.txt and books/king.txt = 0.625
+jacc sim of: books/gk_chesterton_1.txt and books/radziwill.txt = 0.7777778
+jacc sim of: books/gk_chesterton_1.txt and books/shakespeare.txt = 0.4054054
+jacc sim of: books/gk_chesterton_2.txt and books/king.txt = 0.64705884
+jacc sim of: books/gk_chesterton_2.txt and books/radziwill.txt = 0.7894737
+jacc sim of: books/gk_chesterton_2.txt and books/shakespeare.txt = 0.45945945
+jacc sim of: books/gk_chesterton_3.txt and books/king.txt = 0.5
+jacc sim of: books/gk_chesterton_3.txt and books/radziwill.txt = 0.77272725
+jacc sim of: books/gk_chesterton_3.txt and books/shakespeare.txt = 0.5945946
+
+k: 9 n: 10
+
+jacc sim of: books/gk_chesterton_1.txt and books/king.txt = 0.6
+jacc sim of: books/gk_chesterton_1.txt and books/radziwill.txt = 0.25
+jacc sim of: books/gk_chesterton_1.txt and books/shakespeare.txt = 0.3
+jacc sim of: books/gk_chesterton_2.txt and books/king.txt = 0.2857143
+jacc sim of: books/gk_chesterton_2.txt and books/radziwill.txt = 0.5714286
+jacc sim of: books/gk_chesterton_2.txt and books/shakespeare.txt = 0.4
+jacc sim of: books/gk_chesterton_3.txt and books/king.txt = 0.6
+jacc sim of: books/gk_chesterton_3.txt and books/radziwill.txt = 0.42857143
+jacc sim of: books/gk_chesterton_3.txt and books/shakespeare.txt = 0.44444445
+
+k: 9 n: 100
+
+jacc sim of: books/gk_chesterton_1.txt and books/king.txt = 0.72727275
+jacc sim of: books/gk_chesterton_1.txt and books/radziwill.txt = 0.8333333
+jacc sim of: books/gk_chesterton_1.txt and books/shakespeare.txt = 0.33333334
+jacc sim of: books/gk_chesterton_2.txt and books/king.txt = 0.5714286
+jacc sim of: books/gk_chesterton_2.txt and books/radziwill.txt = 0.6666667
+jacc sim of: books/gk_chesterton_2.txt and books/shakespeare.txt = 0.42424244
+jacc sim of: books/gk_chesterton_3.txt and books/king.txt = 0.5714286
+jacc sim of: books/gk_chesterton_3.txt and books/radziwill.txt = 0.6666667
+jacc sim of: books/gk_chesterton_3.txt and books/shakespeare.txt = 0.42424244
+
+k: 9 n: 250
+
+jacc sim of: books/gk_chesterton_1.txt and books/king.txt = 0.7692308
+jacc sim of: books/gk_chesterton_1.txt and books/radziwill.txt = 0.75
+jacc sim of: books/gk_chesterton_1.txt and books/shakespeare.txt = 0.30769232
+jacc sim of: books/gk_chesterton_2.txt and books/king.txt = 0.6875
+jacc sim of: books/gk_chesterton_2.txt and books/radziwill.txt = 0.88235295
+jacc sim of: books/gk_chesterton_2.txt and books/shakespeare.txt = 0.41025642
+jacc sim of: books/gk_chesterton_3.txt and books/king.txt = 0.64705884
+jacc sim of: books/gk_chesterton_3.txt and books/radziwill.txt = 0.7368421
+jacc sim of: books/gk_chesterton_3.txt and books/shakespeare.txt = 0.43589744
+
+k: 9 n: 500
+
+jacc sim of: books/gk_chesterton_1.txt and books/king.txt = 0.84615386
+jacc sim of: books/gk_chesterton_1.txt and books/radziwill.txt = 0.65
+jacc sim of: books/gk_chesterton_1.txt and books/shakespeare.txt = 0.29545453
+jacc sim of: books/gk_chesterton_2.txt and books/king.txt = 0.57894737
+jacc sim of: books/gk_chesterton_2.txt and books/radziwill.txt = 0.6956522
+jacc sim of: books/gk_chesterton_2.txt and books/shakespeare.txt = 0.4
+jacc sim of: books/gk_chesterton_3.txt and books/king.txt = 0.6111111
+jacc sim of: books/gk_chesterton_3.txt and books/radziwill.txt = 0.72727275
+jacc sim of: books/gk_chesterton_3.txt and books/shakespeare.txt = 0.4090909
+
+k: 10 n: 10
+
+jacc sim of: books/gk_chesterton_1.txt and books/king.txt = 0.5714286
+jacc sim of: books/gk_chesterton_1.txt and books/radziwill.txt = 0.625
+jacc sim of: books/gk_chesterton_1.txt and books/shakespeare.txt = 0.27272728
+jacc sim of: books/gk_chesterton_2.txt and books/king.txt = 0.5714286
+jacc sim of: books/gk_chesterton_2.txt and books/radziwill.txt = 0.625
+jacc sim of: books/gk_chesterton_2.txt and books/shakespeare.txt = 0.07692308
+jacc sim of: books/gk_chesterton_3.txt and books/king.txt = 0.375
+jacc sim of: books/gk_chesterton_3.txt and books/radziwill.txt = 0.44444445
+jacc sim of: books/gk_chesterton_3.txt and books/shakespeare.txt = 0.27272728
+
+k: 10 n: 100
+
+jacc sim of: books/gk_chesterton_1.txt and books/king.txt = 0.71428573
+jacc sim of: books/gk_chesterton_1.txt and books/radziwill.txt = 0.8
+jacc sim of: books/gk_chesterton_1.txt and books/shakespeare.txt = 0.36363637
+jacc sim of: books/gk_chesterton_2.txt and books/king.txt = 0.625
+jacc sim of: books/gk_chesterton_2.txt and books/radziwill.txt = 0.7058824
+jacc sim of: books/gk_chesterton_2.txt and books/shakespeare.txt = 0.42424244
+jacc sim of: books/gk_chesterton_3.txt and books/king.txt = 0.6
+jacc sim of: books/gk_chesterton_3.txt and books/radziwill.txt = 0.6875
+jacc sim of: books/gk_chesterton_3.txt and books/shakespeare.txt = 0.40625
+
+k: 10 n: 250
+
+jacc sim of: books/gk_chesterton_1.txt and books/king.txt = 0.5
+jacc sim of: books/gk_chesterton_1.txt and books/radziwill.txt = 0.8
+jacc sim of: books/gk_chesterton_1.txt and books/shakespeare.txt = 0.41860464
+jacc sim of: books/gk_chesterton_2.txt and books/king.txt = 0.47368422
+jacc sim of: books/gk_chesterton_2.txt and books/radziwill.txt = 0.94736844
+jacc sim of: books/gk_chesterton_2.txt and books/shakespeare.txt = 0.44186047
+jacc sim of: books/gk_chesterton_3.txt and books/king.txt = 0.5294118
+jacc sim of: books/gk_chesterton_3.txt and books/radziwill.txt = 0.84210527
+jacc sim of: books/gk_chesterton_3.txt and books/shakespeare.txt = 0.39534885
+
+k: 10 n: 500
+
+jacc sim of: books/gk_chesterton_1.txt and books/king.txt = 0.5882353
+jacc sim of: books/gk_chesterton_1.txt and books/radziwill.txt = 0.8947368
+jacc sim of: books/gk_chesterton_1.txt and books/shakespeare.txt = 0.34
+jacc sim of: books/gk_chesterton_2.txt and books/king.txt = 0.45454547
+jacc sim of: books/gk_chesterton_2.txt and books/radziwill.txt = 0.7826087
+jacc sim of: books/gk_chesterton_2.txt and books/shakespeare.txt = 0.44
+jacc sim of: books/gk_chesterton_3.txt and books/king.txt = 0.5
+jacc sim of: books/gk_chesterton_3.txt and books/radziwill.txt = 0.77272725
+jacc sim of: books/gk_chesterton_3.txt and books/shakespeare.txt = 0.4
+
+k: 11 n: 10
+
+jacc sim of: books/gk_chesterton_1.txt and books/king.txt = 0.33333334
+jacc sim of: books/gk_chesterton_1.txt and books/radziwill.txt = 0.45454547
+jacc sim of: books/gk_chesterton_1.txt and books/shakespeare.txt = 0.1875
+jacc sim of: books/gk_chesterton_2.txt and books/king.txt = 0.42857143
+jacc sim of: books/gk_chesterton_2.txt and books/radziwill.txt = 0.5555556
+jacc sim of: books/gk_chesterton_2.txt and books/shakespeare.txt = 0.21428572
+jacc sim of: books/gk_chesterton_3.txt and books/king.txt = 0.5
+jacc sim of: books/gk_chesterton_3.txt and books/radziwill.txt = 0.44444445
+jacc sim of: books/gk_chesterton_3.txt and books/shakespeare.txt = 0.14285715
+
+k: 11 n: 100
+
+jacc sim of: books/gk_chesterton_1.txt and books/king.txt = 0.9166667
+jacc sim of: books/gk_chesterton_1.txt and books/radziwill.txt = 0.85714287
+jacc sim of: books/gk_chesterton_1.txt and books/shakespeare.txt = 0.31578946
+jacc sim of: books/gk_chesterton_2.txt and books/king.txt = 0.57894737
+jacc sim of: books/gk_chesterton_2.txt and books/radziwill.txt = 0.65
+jacc sim of: books/gk_chesterton_2.txt and books/shakespeare.txt = 0.425
+jacc sim of: books/gk_chesterton_3.txt and books/king.txt = 0.6875
+jacc sim of: books/gk_chesterton_3.txt and books/radziwill.txt = 0.875
+jacc sim of: books/gk_chesterton_3.txt and books/shakespeare.txt = 0.42105263
+
+k: 11 n: 250
+
+jacc sim of: books/gk_chesterton_1.txt and books/king.txt = 0.5263158
+jacc sim of: books/gk_chesterton_1.txt and books/radziwill.txt = 0.6363636
+jacc sim of: books/gk_chesterton_1.txt and books/shakespeare.txt = 0.375
+jacc sim of: books/gk_chesterton_2.txt and books/king.txt = 0.6111111
+jacc sim of: books/gk_chesterton_2.txt and books/radziwill.txt = 0.71428573
+jacc sim of: books/gk_chesterton_2.txt and books/shakespeare.txt = 0.375
+jacc sim of: books/gk_chesterton_3.txt and books/king.txt = 0.6111111
+jacc sim of: books/gk_chesterton_3.txt and books/radziwill.txt = 0.8
+jacc sim of: books/gk_chesterton_3.txt and books/shakespeare.txt = 0.375
+
+k: 11 n: 500
+
+jacc sim of: books/gk_chesterton_1.txt and books/king.txt = 0.6
+jacc sim of: books/gk_chesterton_1.txt and books/radziwill.txt = 0.68
+jacc sim of: books/gk_chesterton_1.txt and books/shakespeare.txt = 0.33898306
+jacc sim of: books/gk_chesterton_2.txt and books/king.txt = 0.44444445
+jacc sim of: books/gk_chesterton_2.txt and books/radziwill.txt = 0.6333333
+jacc sim of: books/gk_chesterton_2.txt and books/shakespeare.txt = 0.45762712
+jacc sim of: books/gk_chesterton_3.txt and books/king.txt = 0.5714286
+jacc sim of: books/gk_chesterton_3.txt and books/radziwill.txt = 0.8695652
+jacc sim of: books/gk_chesterton_3.txt and books/shakespeare.txt = 0.3559322
+
+k: 12 n: 10
+
+jacc sim of: books/gk_chesterton_1.txt and books/king.txt = 0.5
+jacc sim of: books/gk_chesterton_1.txt and books/radziwill.txt = 0.4
+jacc sim of: books/gk_chesterton_1.txt and books/shakespeare.txt = 0.45454547
+jacc sim of: books/gk_chesterton_2.txt and books/king.txt = 0.44444445
+jacc sim of: books/gk_chesterton_2.txt and books/radziwill.txt = 0.36363637
+jacc sim of: books/gk_chesterton_2.txt and books/shakespeare.txt = 0.41666666
+jacc sim of: books/gk_chesterton_3.txt and books/king.txt = 0.5714286
+jacc sim of: books/gk_chesterton_3.txt and books/radziwill.txt = 0.625
+jacc sim of: books/gk_chesterton_3.txt and books/shakespeare.txt = 0.36363637
+
+k: 12 n: 100
+
+jacc sim of: books/gk_chesterton_1.txt and books/king.txt = 0.4375
+jacc sim of: books/gk_chesterton_1.txt and books/radziwill.txt = 0.6
+jacc sim of: books/gk_chesterton_1.txt and books/shakespeare.txt = 0.4054054
+jacc sim of: books/gk_chesterton_2.txt and books/king.txt = 0.36842105
+jacc sim of: books/gk_chesterton_2.txt and books/radziwill.txt = 0.75
+jacc sim of: books/gk_chesterton_2.txt and books/shakespeare.txt = 0.5277778
+jacc sim of: books/gk_chesterton_3.txt and books/king.txt = 0.5833333
+jacc sim of: books/gk_chesterton_3.txt and books/radziwill.txt = 0.64705884
+jacc sim of: books/gk_chesterton_3.txt and books/shakespeare.txt = 0.33333334
+
+k: 12 n: 250
+
+jacc sim of: books/gk_chesterton_1.txt and books/king.txt = 0.5
+jacc sim of: books/gk_chesterton_1.txt and books/radziwill.txt = 0.5555556
+jacc sim of: books/gk_chesterton_1.txt and books/shakespeare.txt = 0.4888889
+jacc sim of: books/gk_chesterton_2.txt and books/king.txt = 0.47826087
+jacc sim of: books/gk_chesterton_2.txt and books/radziwill.txt = 0.72
+jacc sim of: books/gk_chesterton_2.txt and books/shakespeare.txt = 0.51111114
+jacc sim of: books/gk_chesterton_3.txt and books/king.txt = 0.55
+jacc sim of: books/gk_chesterton_3.txt and books/radziwill.txt = 0.8181818
+jacc sim of: books/gk_chesterton_3.txt and books/shakespeare.txt = 0.44444445
+
+k: 12 n: 500
+
+jacc sim of: books/gk_chesterton_1.txt and books/king.txt = 0.47826087
+jacc sim of: books/gk_chesterton_1.txt and books/radziwill.txt = 0.72
+jacc sim of: books/gk_chesterton_1.txt and books/shakespeare.txt = 0.3859649
+jacc sim of: books/gk_chesterton_2.txt and books/king.txt = 0.5217391
+jacc sim of: books/gk_chesterton_2.txt and books/radziwill.txt = 0.76
+jacc sim of: books/gk_chesterton_2.txt and books/shakespeare.txt = 0.40350878
+jacc sim of: books/gk_chesterton_3.txt and books/king.txt = 0.5714286
+jacc sim of: books/gk_chesterton_3.txt and books/radziwill.txt = 0.82608694
+jacc sim of: books/gk_chesterton_3.txt and books/shakespeare.txt = 0.36842105
+
+k: 13 n: 10
+
+jacc sim of: books/gk_chesterton_1.txt and books/king.txt = 0.42857143
+jacc sim of: books/gk_chesterton_1.txt and books/radziwill.txt = 0.5
+jacc sim of: books/gk_chesterton_1.txt and books/shakespeare.txt = 0.25
+jacc sim of: books/gk_chesterton_2.txt and books/king.txt = 0.42857143
+jacc sim of: books/gk_chesterton_2.txt and books/radziwill.txt = 0.5
+jacc sim of: books/gk_chesterton_2.txt and books/shakespeare.txt = 0.25
+jacc sim of: books/gk_chesterton_3.txt and books/king.txt = 0.42857143
+jacc sim of: books/gk_chesterton_3.txt and books/radziwill.txt = 0.5
+jacc sim of: books/gk_chesterton_3.txt and books/shakespeare.txt = 0.25
+
+k: 13 n: 100
+
+jacc sim of: books/gk_chesterton_1.txt and books/king.txt = 0.5882353
+jacc sim of: books/gk_chesterton_1.txt and books/radziwill.txt = 0.7222222
+jacc sim of: books/gk_chesterton_1.txt and books/shakespeare.txt = 0.42857143
+jacc sim of: books/gk_chesterton_2.txt and books/king.txt = 0.5
+jacc sim of: books/gk_chesterton_2.txt and books/radziwill.txt = 0.7
+jacc sim of: books/gk_chesterton_2.txt and books/shakespeare.txt = 0.51428574
+jacc sim of: books/gk_chesterton_3.txt and books/king.txt = 0.5625
+jacc sim of: books/gk_chesterton_3.txt and books/radziwill.txt = 0.6111111
+jacc sim of: books/gk_chesterton_3.txt and books/shakespeare.txt = 0.4117647
+
+k: 13 n: 250
+
+jacc sim of: books/gk_chesterton_1.txt and books/king.txt = 0.42857143
+jacc sim of: books/gk_chesterton_1.txt and books/radziwill.txt = 0.6818182
+jacc sim of: books/gk_chesterton_1.txt and books/shakespeare.txt = 0.45652175
+jacc sim of: books/gk_chesterton_2.txt and books/king.txt = 0.39130434
+jacc sim of: books/gk_chesterton_2.txt and books/radziwill.txt = 0.6956522
+jacc sim of: books/gk_chesterton_2.txt and books/shakespeare.txt = 0.5
+jacc sim of: books/gk_chesterton_3.txt and books/king.txt = 0.45
+jacc sim of: books/gk_chesterton_3.txt and books/radziwill.txt = 0.8
+jacc sim of: books/gk_chesterton_3.txt and books/shakespeare.txt = 0.4347826
+
+k: 13 n: 500
+
+jacc sim of: books/gk_chesterton_1.txt and books/king.txt = 0.45454547
+jacc sim of: books/gk_chesterton_1.txt and books/radziwill.txt = 0.7692308
+jacc sim of: books/gk_chesterton_1.txt and books/shakespeare.txt = 0.43137255
+jacc sim of: books/gk_chesterton_2.txt and books/king.txt = 0.33333334
+jacc sim of: books/gk_chesterton_2.txt and books/radziwill.txt = 0.6875
+jacc sim of: books/gk_chesterton_2.txt and books/shakespeare.txt = 0.5882353
+jacc sim of: books/gk_chesterton_3.txt and books/king.txt = 0.4347826
+jacc sim of: books/gk_chesterton_3.txt and books/radziwill.txt = 0.8076923
+jacc sim of: books/gk_chesterton_3.txt and books/shakespeare.txt = 0.4509804
