@@ -122,6 +122,9 @@ object MainObject{
 
         // shingle length
         var k: Int = 4
+
+        // no. of hash functions
+        var n: Int = 10
         
         // create union set of shingles common for all the books
         var commonShingles: Set[String] = generateBookShingles(book_name = testArray(0), k = k)
@@ -141,13 +144,54 @@ object MainObject{
                 if (setShingles.contains(shingle)){
                     columnSignature = columnSignature :+ 1
                 }else{
-                    columnSignature = columnSignature :+ 1
+                    columnSignature = columnSignature :+ 0
                 }
             }
             initialSignatureMatrix = initialSignatureMatrix :+ columnSignature
         }
 
-        
+        // initialize final signatue matrix
+        var finalSignatureMatrix: Array[Array[Int]] = Array()
+        val maxCommonSetValue: Int = commonShingles.size + 1
+        for (book <- testArray){
+            var columnSignature: Array[Int] = Array()
+            var setShingles: Set[String] = generateBookShingles(book_name = book, k = k)
+            for (_ <- 0 to (n - 1)){
+                columnSignature = columnSignature :+ maxCommonSetValue
+            }
+            finalSignatureMatrix = finalSignatureMatrix :+ columnSignature
+        }
+
+        var hashTable: Array[Array[Int]] = generateRandomHashingTables(set = commonShingles, n = n)
+        var signatureMatrixValue: Int = 0
+        var hashTableValue: Int = 0
+        // iterate over columns if signature matrix
+        for (columnIndex <- 0 to (initialSignatureMatrix.size - 1)){
+            for (rowIndex <- 0 to (initialSignatureMatrix(0).size - 1)){
+                if (initialSignatureMatrix(columnIndex)(rowIndex) != 0){
+                    for (i <- 0 to (n - 1)){
+                        signatureMatrixValue = finalSignatureMatrix(columnIndex)(i)
+                        hashTableValue = hashTable(i)(rowIndex)
+                        finalSignatureMatrix(columnIndex)(i) = min(signatureMatrixValue, hashTableValue)
+                    }
+                }
+            }
+        }
+        // print for checking
+        println("\ninit:")
+        for (column <- initialSignatureMatrix){
+            for (row <- column){
+                print(row)
+            }
+            print("\n")
+        }
+        println("\nfinal:")
+        for (column <- finalSignatureMatrix){
+            for (row <- column){
+                print(row)
+            }
+            print("\n")
+        }
 
     }
 }
