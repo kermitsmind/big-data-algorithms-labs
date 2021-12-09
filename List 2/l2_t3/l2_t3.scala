@@ -222,7 +222,7 @@ object MainObject{
         //     println("\n" + shingle)
         // }
         
-        for (k <- 4 to 13){
+        for (k <- 8 to 13){
             for (n <- nRange){
                 // open file writer to save results
                 val fileWriter = new FileWriter("l2_t3_results_newShingles.txt", true)
