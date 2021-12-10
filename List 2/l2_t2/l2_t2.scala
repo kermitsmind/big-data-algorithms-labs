@@ -42,19 +42,42 @@ object MainObject{
         }
         return output
     }
+    //making shingles out of words
+    // def convertStringArrayIntoShinglesArray(givenArray: Array[String], k: Int): Array[String] = {
+    //     val shinglesFrequencyMap: concurrent.Map[String, Int] = new concurrent.TrieMap()
+    //     for (word <- givenArray){
+    //         var shingles: Array[String] = generateStringShingles(word, k)
+    //         for (shingle <- shingles){
+    //             if(shinglesFrequencyMap.keys.toArray contains shingle){
+    //                 var oldFrequency: Int = shinglesFrequencyMap.getOrElse(shingle, 0)
+    //                 var newFrequency:Int = oldFrequency + 1
+    //                 shinglesFrequencyMap.replace(shingle, newFrequency)
+    //             }else{
+    //                 shinglesFrequencyMap.putIfAbsent(shingle, 1)
+    //             }                
+    //         }
+    //     }
+    //     shinglesFrequencyMap.remove("")
+    //     return shinglesFrequencyMap.keys.toArray
+    // }
 
+    //making shingles out of whole words
     def convertStringArrayIntoShinglesArray(givenArray: Array[String], k: Int): Array[String] = {
         val shinglesFrequencyMap: concurrent.Map[String, Int] = new concurrent.TrieMap()
-        for (word <- givenArray){
-            var shingles: Array[String] = generateStringShingles(word, k)
-            for (shingle <- shingles){
-                if(shinglesFrequencyMap.keys.toArray contains shingle){
-                    var oldFrequency: Int = shinglesFrequencyMap.getOrElse(shingle, 0)
-                    var newFrequency:Int = oldFrequency + 1
-                    shinglesFrequencyMap.replace(shingle, newFrequency)
-                }else{
-                    shinglesFrequencyMap.putIfAbsent(shingle, 1)
-                }                
+        for (wordIndex <- 0 to givenArray.size){
+            var maxShingleIndex: Int = min((givenArray.size - 1), (wordIndex + k - 1))
+            var shingle: String = ""
+            for (shingleIndex <- wordIndex to maxShingleIndex){
+                if ((maxShingleIndex - wordIndex + 1) >= k){
+                    shingle = shingle + " " + givenArray(shingleIndex)
+                }
+            }                
+            if(shinglesFrequencyMap.keys.toArray contains shingle){
+                var oldFrequency: Int = shinglesFrequencyMap.getOrElse(shingle, 0)
+                var newFrequency:Int = oldFrequency + 1
+                shinglesFrequencyMap.replace(shingle, newFrequency)
+            }else{
+                shinglesFrequencyMap.putIfAbsent(shingle, 1)
             }
         }
         shinglesFrequencyMap.remove("")
@@ -102,7 +125,7 @@ object MainObject{
                         "shakespeare.txt")
         
         // open file writer to save results
-        val fileWriter = new FileWriter("l2_t2_results.txt", true)
+        val fileWriter = new FileWriter("l2_t2_results_newShingles.txt", true)
         
         // outer book loop
         for (bookA <- mixedBooksArray1){

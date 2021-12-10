@@ -1,0 +1,107 @@
+k: 4-13
+Jacc Sim of: gk_chesterton_1.txt and: king.txt = 0.011274288
+Jacc Sim of: gk_chesterton_1.txt and: king.txt = 0.0102447355
+Jacc Sim of: gk_chesterton_1.txt and: king.txt = 0.009054507
+Jacc Sim of: gk_chesterton_1.txt and: king.txt = 0.007881466
+Jacc Sim of: gk_chesterton_1.txt and: king.txt = 0.0068349107
+Jacc Sim of: gk_chesterton_1.txt and: king.txt = 0.0059295846
+Jacc Sim of: gk_chesterton_1.txt and: king.txt = 0.0051599834
+Jacc Sim of: gk_chesterton_1.txt and: king.txt = 0.0045001074
+Jacc Sim of: gk_chesterton_1.txt and: king.txt = 0.0039373827
+Jacc Sim of: gk_chesterton_1.txt and: king.txt = 0.0034352823
+
+k: 4-13
+Jacc Sim of: gk_chesterton_1.txt and: radziwill.txt = 0.022555798
+Jacc Sim of: gk_chesterton_1.txt and: radziwill.txt = 0.023081379
+Jacc Sim of: gk_chesterton_1.txt and: radziwill.txt = 0.023069724
+Jacc Sim of: gk_chesterton_1.txt and: radziwill.txt = 0.023007113
+Jacc Sim of: gk_chesterton_1.txt and: radziwill.txt = 0.022970285
+Jacc Sim of: gk_chesterton_1.txt and: radziwill.txt = 0.022906804
+Jacc Sim of: gk_chesterton_1.txt and: radziwill.txt = 0.022851296
+Jacc Sim of: gk_chesterton_1.txt and: radziwill.txt = 0.022797318
+Jacc Sim of: gk_chesterton_1.txt and: radziwill.txt = 0.022743799
+Jacc Sim of: gk_chesterton_1.txt and: radziwill.txt = 0.02269109
+
+k: 4-13
+Jacc Sim of: gk_chesterton_1.txt and: shakespeare.txt = 0.030262934
+Jacc Sim of: gk_chesterton_1.txt and: shakespeare.txt = 0.03090321
+Jacc Sim of: gk_chesterton_1.txt and: shakespeare.txt = 0.031094842
+Jacc Sim of: gk_chesterton_1.txt and: shakespeare.txt = 0.031008566
+Jacc Sim of: gk_chesterton_1.txt and: shakespeare.txt = 0.030944046
+Jacc Sim of: gk_chesterton_1.txt and: shakespeare.txt = 0.030828517
+Jacc Sim of: gk_chesterton_1.txt and: shakespeare.txt = 0.030747656
+Jacc Sim of: gk_chesterton_1.txt and: shakespeare.txt = 0.030691018
+Jacc Sim of: gk_chesterton_1.txt and: shakespeare.txt = 0.030635078
+Jacc Sim of: gk_chesterton_1.txt and: shakespeare.txt = 0.030580465
+
+k: 4-13
+Jacc Sim of: gk_chesterton_2.txt and: king.txt = 0.01251408
+Jacc Sim of: gk_chesterton_2.txt and: king.txt = 0.011343235
+Jacc Sim of: gk_chesterton_2.txt and: king.txt = 0.010083421
+Jacc Sim of: gk_chesterton_2.txt and: king.txt = 0.008779123
+Jacc Sim of: gk_chesterton_2.txt and: king.txt = 0.00764526
+Jacc Sim of: gk_chesterton_2.txt and: king.txt = 0.006643806
+Jacc Sim of: gk_chesterton_2.txt and: king.txt = 0.005793805
+Jacc Sim of: gk_chesterton_2.txt and: king.txt = 0.005053341
+Jacc Sim of: gk_chesterton_2.txt and: king.txt = 0.0044218823
+Jacc Sim of: gk_chesterton_2.txt and: king.txt = 0.0038584264
+
+k: 4-13
+Jacc Sim of: gk_chesterton_2.txt and: radziwill.txt = 0.026267866
+Jacc Sim of: gk_chesterton_2.txt and: radziwill.txt = 0.026844535
+Jacc Sim of: gk_chesterton_2.txt and: radziwill.txt = 0.026916996
+Jacc Sim of: gk_chesterton_2.txt and: radziwill.txt = 0.026716242
+Jacc Sim of: gk_chesterton_2.txt and: radziwill.txt = 0.026677534
+Jacc Sim of: gk_chesterton_2.txt and: radziwill.txt = 0.026610948
+Jacc Sim of: gk_chesterton_2.txt and: radziwill.txt = 0.026550272
+Jacc Sim of: gk_chesterton_2.txt and: radziwill.txt = 0.026490664
+Jacc Sim of: gk_chesterton_2.txt and: radziwill.txt = 0.026431162
+Jacc Sim of: gk_chesterton_2.txt and: radziwill.txt = 0.026372716
+
+k: 4-13
+Jacc Sim of: gk_chesterton_2.txt and: shakespeare.txt = 0.037422422
+Jacc Sim of: gk_chesterton_2.txt and: shakespeare.txt = 0.038203068
+Jacc Sim of: gk_chesterton_2.txt and: shakespeare.txt = 0.038471542
+Jacc Sim of: gk_chesterton_2.txt and: shakespeare.txt = 0.03834272
+Jacc Sim of: gk_chesterton_2.txt and: shakespeare.txt = 0.038246125
+Jacc Sim of: gk_chesterton_2.txt and: shakespeare.txt = 0.038121648
+Jacc Sim of: gk_chesterton_2.txt and: shakespeare.txt = 0.03806094
+Jacc Sim of: gk_chesterton_2.txt and: shakespeare.txt = 0.038002227
+Jacc Sim of: gk_chesterton_2.txt and: shakespeare.txt = 0.03794354
+Jacc Sim of: gk_chesterton_2.txt and: shakespeare.txt = 0.037886832
+
+k: 4-13
+Jacc Sim of: gk_chesterton_3.txt and: king.txt = 0.021782659
+Jacc Sim of: gk_chesterton_3.txt and: king.txt = 0.022317339
+Jacc Sim of: gk_chesterton_3.txt and: king.txt = 0.022490498
+Jacc Sim of: gk_chesterton_3.txt and: king.txt = 0.022239378
+Jacc Sim of: gk_chesterton_3.txt and: king.txt = 0.021969395
+Jacc Sim of: gk_chesterton_3.txt and: king.txt = 0.021722082
+Jacc Sim of: gk_chesterton_3.txt and: king.txt = 0.02146405
+Jacc Sim of: gk_chesterton_3.txt and: king.txt = 0.021192698
+Jacc Sim of: gk_chesterton_3.txt and: king.txt = 0.020939704
+Jacc Sim of: gk_chesterton_3.txt and: king.txt = 0.020688333
+
+k: 4-13
+Jacc Sim of: gk_chesterton_3.txt and: radziwill.txt = 0.020390473
+Jacc Sim of: gk_chesterton_3.txt and: radziwill.txt = 0.018772932
+Jacc Sim of: gk_chesterton_3.txt and: radziwill.txt = 0.016909042
+Jacc Sim of: gk_chesterton_3.txt and: radziwill.txt = 0.014933183
+Jacc Sim of: gk_chesterton_3.txt and: radziwill.txt = 0.0131687075
+Jacc Sim of: gk_chesterton_3.txt and: radziwill.txt = 0.011685743
+Jacc Sim of: gk_chesterton_3.txt and: radziwill.txt = 0.010356503
+Jacc Sim of: gk_chesterton_3.txt and: radziwill.txt = 0.00917577
+Jacc Sim of: gk_chesterton_3.txt and: radziwill.txt = 0.008141838
+Jacc Sim of: gk_chesterton_3.txt and: radziwill.txt = 0.0071933917
+
+k: 4-13
+Jacc Sim of: gk_chesterton_3.txt and: shakespeare.txt = 0.030154211
+Jacc Sim of: gk_chesterton_3.txt and: shakespeare.txt = 0.027646227
+Jacc Sim of: gk_chesterton_3.txt and: shakespeare.txt = 0.024909517
+Jacc Sim of: gk_chesterton_3.txt and: shakespeare.txt = 0.02218461
+Jacc Sim of: gk_chesterton_3.txt and: shakespeare.txt = 0.01973229
+Jacc Sim of: gk_chesterton_3.txt and: shakespeare.txt = 0.017500225
+Jacc Sim of: gk_chesterton_3.txt and: shakespeare.txt = 0.015502718
+Jacc Sim of: gk_chesterton_3.txt and: shakespeare.txt = 0.013730045
+Jacc Sim of: gk_chesterton_3.txt and: shakespeare.txt = 0.012179183
+Jacc Sim of: gk_chesterton_3.txt and: shakespeare.txt = 0.010757468
