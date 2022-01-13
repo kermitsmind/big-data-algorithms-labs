@@ -8,6 +8,9 @@
     // https://www.tutorialspoint.com/scala/scala_arrays.htm
     // https://www.geeksforgeeks.org/for-loop-in-scala/
     // https://alvinalexander.com/scala/how-to-open-read-text-files-in-scala-cookbook-examples/
+    // https://www.includehelp.com/scala/multiply-two-matrices.aspx
+    // https://www.baeldung.com/scala/find-index-element-in-list
+    // https://alvinalexander.com/scala/how-to-format-numbers-commas-international-currency-in-scala/
 
 
 import scala.io.Source
@@ -66,7 +69,46 @@ object MainObject{
         var readArray: Array[String] = Source.fromFile(fileName).getLines.toArray
         return readArray
     }
-    //def createTransitionMatrixOfCrawledPages
+    
+    // take crawled pages list and create transition matrix for them
+    def createTransitionMatrixOfCrawledPages(crawledPagesListName: String = "crawledPagesList"): Array[Array[Float]] = {
+        // load crawled pages list
+        val crawledPagesListArray: Array[String] = readFile(fileName = crawledPagesListName)
+        // get number of crawled pages
+        val numberOfCrawledPages: Int = crawledPagesListArray.length
+        // initialize transition martix of proper size
+        var transitionMatrix = Array.ofDim[Float](numberOfCrawledPages, numberOfCrawledPages)
+        // iterate through column _,j becuase column has value for a node
+        for (j <- 0 to (numberOfCrawledPages - 1)){
+            // get current page (node) name
+            var pageName: String = crawledPagesListArray(j)
+            // get array of the node links
+            var pageLinks: Array[String] = readFile(fileName = ("webPages/" + pageName))
+            // get number of the node links
+            var numberOfPageLinks: Int = pageLinks.length
+            // compute transition value for links for the given node
+            var transitionProbabilityValue: Float = ((1.0)/(numberOfPageLinks)).toFloat
+            // iterate through elements in a node
+            for (element <- pageLinks){
+                // get outNode,currentNode element index
+                var elementIndex: Int = crawledPagesListArray.indexOf(element)
+                // assign outNode,currentNode transition probability value
+                transitionMatrix(elementIndex)(j) = transitionProbabilityValue
+            }
+        }
+        // return transition matrix
+        return transitionMatrix
+    }
+
+    // get matrix and print it nicely formatted
+    def printMatrix(matrix: Array[Array[Float]]): Unit = {
+        for (row <- matrix){
+            println()
+            for (column <- row){
+                print(f"$column%1.2f" + " ")
+            }
+        }
+    }
 
 
 
@@ -74,11 +116,12 @@ object MainObject{
     def main(args: Array[String]): Unit = {
         val html = "https://en.wikipedia.org/wiki/Web_crawler"
         // crawlGivenNumberOfPages(url = html, n = 10)
-        val rTest: Array[String] = readFile(fileName = "crawledPagesList")
-        for (line <- rTest){
-            println(line)
-        }
-        
+        // val rTest: Array[String] = readFile(fileName = "crawledPagesList")
+        // for (line <- rTest){
+        //     println(line)
+        // }
+        val t = createTransitionMatrixOfCrawledPages()
+        printMatrix(matrix = t)
     }   
 
 }
