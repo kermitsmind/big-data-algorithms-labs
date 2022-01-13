@@ -111,6 +111,7 @@ object MainObject{
         }
     }
 
+    // multiply two matrices and return the result
     def multiplyMatrices(matrix1: Array[Array[Float]], matrix2: Array[Array[Float]]): Array[Array[Float]] = {
         val numberOfRowsOfMatrix1: Int = matrix1.length
         val numberOfColumnOfMatrix1: Int = matrix1(0).length
@@ -127,14 +128,33 @@ object MainObject{
                 matrix3(i)(j) = sum
             }
         }    
-
         return matrix3
     }
 
     // compute basic Page Rank
-    // def computePageRank(transitionMatrix: Array[Array[Float]], numberOfIterations: Int): Unit = {
+    def computePageRank(transitionMatrix: Array[Array[Float]], numberOfIterations: Int): Unit = {
+        // get vector V length
+        val lengthOfVectorV: Int = transitionMatrix.length
+        // fill vector V with initial values (random surfer model: move to every node is equally probable)
+        val initialValueOfVectorV: Float = (1.0 / lengthOfVectorV).toFloat
+        var temporaryVectorV = Array.ofDim[Float](lengthOfVectorV, 1)
+        for (i <- 0 to (lengthOfVectorV - 1)){
+            temporaryVectorV(i)(0) = initialValueOfVectorV
+        }
 
-    // }
+        printMatrix(temporaryVectorV)
+        
+        // multiply transition matrix and vector V n times
+        var finalVectorV = Array.ofDim[Float](lengthOfVectorV, 1)
+        for (i <- 1 to numberOfIterations){
+            finalVectorV = multiplyMatrices(transitionMatrix, temporaryVectorV)
+            temporaryVectorV = finalVectorV
+
+            println("\n---------------------")
+            printMatrix(finalVectorV)
+        }
+        
+    }
 
 
 
@@ -146,20 +166,9 @@ object MainObject{
         // for (line <- rTest){
         //     println(line)
         // }
-        // val t = createTransitionMatrixOfCrawledPages()
-        // printMatrix(matrix = t)
-        var matrix1 = Array.ofDim[Float](2, 2)
-        matrix1(0)(0) = 1
-        matrix1(0)(1) = 2
-        matrix1(1)(0) = 3
-        matrix1(1)(1) = 4
-
-        var matrix2 = Array.ofDim[Float](2, 1)
-        matrix2(0)(0) = 2
-        matrix2(1)(0) = 3
-
-        val res = multiplyMatrices(matrix1, matrix2)
-        printMatrix(res)
+        var transitionMatrix = createTransitionMatrixOfCrawledPages()
+        computePageRank(transitionMatrix, 10)
+        
     }   
 
 }
