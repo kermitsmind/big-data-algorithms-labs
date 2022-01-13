@@ -38,7 +38,7 @@ object MainObject{
         val wikiHrefPattern = "wiki\\/(?!.*%|Category|Help|Wikipedia|Special|" +
           "Talk|Privacy_policy|Cookie_statement|Terms_of_Use|Portal|Main_Page|File|Template)[^\"]*"
         val hrefs = wikiHrefPattern.r.findAllIn(pageContent).toSet.toArray
-        writeFile(fileName = pageName, stringArray = hrefs)
+        writeFile(fileName = ("webPages/" + pageName), stringArray = hrefs)
         val randomNumberGenerator = scala.util.Random
         val randomNumber = randomNumberGenerator.nextInt(hrefs.length)
         return ("https://en.wikipedia.org/" + hrefs(randomNumber))
