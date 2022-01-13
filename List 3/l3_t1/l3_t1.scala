@@ -11,6 +11,7 @@
     // https://www.includehelp.com/scala/multiply-two-matrices.aspx
     // https://www.baeldung.com/scala/find-index-element-in-list
     // https://alvinalexander.com/scala/how-to-format-numbers-commas-international-currency-in-scala/
+    // https://en.wikipedia.org/wiki/Matrix_multiplication_algorithm
 
 
 import scala.io.Source
@@ -110,6 +111,31 @@ object MainObject{
         }
     }
 
+    def multiplyMatrices(matrix1: Array[Array[Float]], matrix2: Array[Array[Float]]): Array[Array[Float]] = {
+        val numberOfRowsOfMatrix1: Int = matrix1.length
+        val numberOfColumnOfMatrix1: Int = matrix1(0).length
+        val numberOfColumnOfMatrix2: Int = matrix2(0).length
+        var matrix3: Array[Array[Float]] = Array.ofDim[Float](numberOfRowsOfMatrix1, numberOfColumnOfMatrix2)
+        var k: Int = 0
+        var sum: Float = 0
+        for (i <- 0 to (numberOfRowsOfMatrix1 - 1)){
+            for (j <- 0 to (numberOfColumnOfMatrix2 - 1)){
+                sum = 0
+                for (k <- 0 to (numberOfColumnOfMatrix1 - 1)){
+                    sum = sum + matrix1(i)(k) * matrix2(k)(j)
+                }
+                matrix3(i)(j) = sum
+            }
+        }    
+
+        return matrix3
+    }
+
+    // compute basic Page Rank
+    // def computePageRank(transitionMatrix: Array[Array[Float]], numberOfIterations: Int): Unit = {
+
+    // }
+
 
 
     // main function
@@ -120,8 +146,20 @@ object MainObject{
         // for (line <- rTest){
         //     println(line)
         // }
-        val t = createTransitionMatrixOfCrawledPages()
-        printMatrix(matrix = t)
+        // val t = createTransitionMatrixOfCrawledPages()
+        // printMatrix(matrix = t)
+        var matrix1 = Array.ofDim[Float](2, 2)
+        matrix1(0)(0) = 1
+        matrix1(0)(1) = 2
+        matrix1(1)(0) = 3
+        matrix1(1)(1) = 4
+
+        var matrix2 = Array.ofDim[Float](2, 1)
+        matrix2(0)(0) = 2
+        matrix2(1)(0) = 3
+
+        val res = multiplyMatrices(matrix1, matrix2)
+        printMatrix(res)
     }   
 
 }
