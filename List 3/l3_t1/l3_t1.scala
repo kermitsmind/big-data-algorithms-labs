@@ -12,7 +12,6 @@
     // https://www.baeldung.com/scala/find-index-element-in-list
     // https://alvinalexander.com/scala/how-to-format-numbers-commas-international-currency-in-scala/
     // https://en.wikipedia.org/wiki/Matrix_multiplication_algorithm
-    // https://www.codegrepper.com/code-examples/java/how+to+remove+first+character+from+string+in+scala
 
 
 import scala.io.Source
@@ -29,9 +28,16 @@ object MainObject{
     // take name, string array and saves to file with given name
     def writeFile(fileName: String, stringArray: Array[String]): Unit = {
         val fileWriter = new FileWriter(fileName, true)
+        val numberOfLinesToWrite: Int = stringArray.length
+        var iterator: Int = 1
         for (line <- stringArray){
-            fileWriter.write(line)
-            fileWriter.write("\n")
+            if (iterator < numberOfLinesToWrite){
+                fileWriter.write(line)
+                fileWriter.write("\n")
+                iterator = iterator + 1
+            }else{
+                fileWriter.write(line)
+            }
         }
         fileWriter.close()
     }
@@ -84,8 +90,15 @@ object MainObject{
         for (j <- 0 to (numberOfCrawledPages - 1)){
             // get current page (node) name
             var pageName: String = crawledPagesListArray(j)
-            // get array of the node links
-            var pageLinks: Array[String] = readFile(fileName = ("webPages/" + pageName))
+            // get array of the node links and intersect it with the crawled pages array to have only crawled links;
+            // by doing so each node contains only links which correspond to other crawled links;
+            // let's say we crawled i.e. 5 pages and without intersecting one node may have i.e. 100 links but only 
+            // 3 links correspond to other crawled pages thus index of a link corresponding to other crawled page may be 
+            // i.e. 57 so it will be out of range for the transition matrix and it will cause an error  
+            var pageLinks: Array[String] = crawledPagesListArray.toSet.intersect(readFile(fileName = ("webPages/" + pageName)).toSet).toArray
+            // debugging printing
+            println("\n\n--------- pageName: " + pageName + "\n----- pageLinks:")
+            pageLinks.foreach(x => println("-- " + x))
             // get number of the node links
             var numberOfPageLinks: Int = pageLinks.length
             // compute transition value for links for the given node
@@ -162,13 +175,13 @@ object MainObject{
     // main function
     def main(args: Array[String]): Unit = {
         val html = "https://en.wikipedia.org/wiki/Web_crawler"
-        crawlGivenNumberOfPages(url = html, n = 3)
+        crawlGivenNumberOfPages(url = html, n = 10)
         // val rTest: Array[String] = readFile(fileName = "crawledPagesList")
         // for (line <- rTest){
         //     println(line)
         // }
         var transitionMatrix = createTransitionMatrixOfCrawledPages()
-        computePageRank(transitionMatrix, 10)
+        computePageRank(transitionMatrix, 30)
         
     }   
 
