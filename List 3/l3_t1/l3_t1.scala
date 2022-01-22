@@ -122,7 +122,7 @@ object MainObject{
         for (row <- matrix){
             println()
             for (column <- row){
-                print(f"$column%1.2f" + " ")
+                print(f"$column%1.8f" + " ")
             }
         }
     }
@@ -161,8 +161,23 @@ object MainObject{
         return matrix3
     }
 
+    // compare two matrices of the same size and return the result
+    def compareMatrices(matrix1: Array[Array[Float]], matrix2: Array[Array[Float]]): Float = {
+        val numberOfRowsOfMatrix1: Int = matrix1.length
+        val numberOfColumnOfMatrix1: Int = matrix1(0).length
+        var differenceVector: Array[Float] = Array()
+        var difference: Float = 0
+        for (i <- 0 to (numberOfRowsOfMatrix1 - 1)){
+            for (j <- 0 to (numberOfColumnOfMatrix1 - 1)){
+                difference = (matrix1(i)(j) - matrix2(i)(j)).abs
+                differenceVector = differenceVector.appended(difference)
+            }
+        }    
+        return differenceVector.reduceLeft(_ max _).toFloat
+    }
+
     // compute basic Page Rank
-    def computePageRank(transitionMatrix: Array[Array[Float]], numberOfIterations: Int, beta: Float): Unit = {
+    def computePageRank(transitionMatrix: Array[Array[Float]], beta: Float, epsilon: Float): Unit = {
         // get vector V length
         val lengthOfVectorV: Int = transitionMatrix.length
         // fill vector V with initial values (random surfer model: move to every node is equally probable)
@@ -171,25 +186,31 @@ object MainObject{
         var temporaryVectorV = Array.ofDim[Float](lengthOfVectorV, 1)
         var vectorVBeta = Array.ofDim[Float](lengthOfVectorV, 1)
         var newTransitionMatrix = transitionMatrix
+        var finalVectorVOld = Array.ofDim[Float](lengthOfVectorV, 1)
         newTransitionMatrix = newTransitionMatrix.map(_.map(_ * beta))
         println("+++++++++++++++++++++++++++")
         printMatrix(newTransitionMatrix)
         for (i <- 0 to (lengthOfVectorV - 1)){
             temporaryVectorV(i)(0) = initialValueOfVectorV
             vectorVBeta(i)(0) = valueOfVectorVBeta
+            finalVectorVOld(i)(0) = initialValueOfVectorV
         }
+        println("")
 
         printMatrix(temporaryVectorV)
         
         // multiply transition matrix and vector V n times
-        var finalVectorV = Array.ofDim[Float](lengthOfVectorV, 1)
-        for (i <- 1 to numberOfIterations){
-            finalVectorV = multiplyMatrices(newTransitionMatrix, temporaryVectorV)
-            temporaryVectorV = addMatrices(finalVectorV, vectorVBeta)
-            finalVectorV = temporaryVectorV
-
+        var finalVectorVNew = Array.ofDim[Float](lengthOfVectorV, 1)
+        var vectorVsDifference: Float = 10.0
+        while (vectorVsDifference > epsilon){
+            finalVectorVNew = multiplyMatrices(newTransitionMatrix, temporaryVectorV)
+            temporaryVectorV = addMatrices(finalVectorVNew, vectorVBeta)
+            finalVectorVNew = temporaryVectorV
             println("\n---------------------")
-            printMatrix(finalVectorV)
+            printMatrix(finalVectorVNew)
+            vectorVsDifference = compareMatrices(finalVectorVNew, finalVectorVOld)
+            println("\n\nvector's difference: " + vectorVsDifference)
+            finalVectorVOld = finalVectorVNew
         }
         
     }
@@ -205,10 +226,7 @@ object MainObject{
         //     println(line)
         // }
         var transitionMatrix = createTransitionMatrixOfCrawledPages()
-        computePageRank(transitionMatrix, 5, 0.8)
-
-
-        
+        computePageRank(transitionMatrix, 0.90, 0.00001)
     }   
 
 }
