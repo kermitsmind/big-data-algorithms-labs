@@ -175,13 +175,13 @@ object MainObject{
     // main function
     def main(args: Array[String]): Unit = {
         val html = "https://en.wikipedia.org/wiki/Web_crawler"
-        crawlGivenNumberOfPages(url = html, n = 10)
+        // crawlGivenNumberOfPages(url = html, n = 10)
         // val rTest: Array[String] = readFile(fileName = "crawledPagesList")
         // for (line <- rTest){
         //     println(line)
         // }
         var transitionMatrix = createTransitionMatrixOfCrawledPages()
-        computePageRank(transitionMatrix, 30)
+        computePageRank(transitionMatrix, 20)
         
     }   
 
