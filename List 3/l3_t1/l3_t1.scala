@@ -12,6 +12,8 @@
     // https://www.baeldung.com/scala/find-index-element-in-list
     // https://alvinalexander.com/scala/how-to-format-numbers-commas-international-currency-in-scala/
     // https://en.wikipedia.org/wiki/Matrix_multiplication_algorithm
+    // https://stackoverflow.com/questions/10049581/mapping-a-function-over-a-multidimensional-array-in-scala
+    // https://stackoverflow.com/questions/59286385/fastest-method-to-multiply-every-element-of-array-with-a-number-in-scala
 
 
 import scala.io.Source
@@ -145,15 +147,32 @@ object MainObject{
         return matrix3
     }
 
+    // add two matrices of the same size and return the result
+    def addMatrices(matrix1: Array[Array[Float]], matrix2: Array[Array[Float]]): Array[Array[Float]] = {
+        val numberOfRowsOfMatrix1: Int = matrix1.length
+        val numberOfColumnOfMatrix1: Int = matrix1(0).length
+        var matrix3: Array[Array[Float]] = Array.ofDim[Float](numberOfRowsOfMatrix1, numberOfColumnOfMatrix1)
+        var sum: Float = 0
+        for (i <- 0 to (numberOfRowsOfMatrix1 - 1)){
+            for (j <- 0 to (numberOfColumnOfMatrix1 - 1)){
+                matrix3(i)(j) = matrix1(i)(j) + matrix2(i)(j)
+            }
+        }    
+        return matrix3
+    }
+
     // compute basic Page Rank
-    def computePageRank(transitionMatrix: Array[Array[Float]], numberOfIterations: Int): Unit = {
+    def computePageRank(transitionMatrix: Array[Array[Float]], numberOfIterations: Int, beta: Float): Unit = {
         // get vector V length
         val lengthOfVectorV: Int = transitionMatrix.length
         // fill vector V with initial values (random surfer model: move to every node is equally probable)
         val initialValueOfVectorV: Float = (1.0 / lengthOfVectorV).toFloat
+        val valueOfVectorVBeta: Float = ((1.0 - beta) / lengthOfVectorV).toFloat
         var temporaryVectorV = Array.ofDim[Float](lengthOfVectorV, 1)
+        var vectorVBeta = Array.ofDim[Float](lengthOfVectorV, 1)
         for (i <- 0 to (lengthOfVectorV - 1)){
             temporaryVectorV(i)(0) = initialValueOfVectorV
+            vectorVBeta(i)(0) = valueOfVectorVBeta
         }
 
         printMatrix(temporaryVectorV)
@@ -162,7 +181,8 @@ object MainObject{
         var finalVectorV = Array.ofDim[Float](lengthOfVectorV, 1)
         for (i <- 1 to numberOfIterations){
             finalVectorV = multiplyMatrices(transitionMatrix, temporaryVectorV)
-            temporaryVectorV = finalVectorV
+            finalVectorV = finalVectorV.map(_.map(_ * beta))
+            temporaryVectorV = addMatrices(finalVectorV, vectorVBeta)
 
             println("\n---------------------")
             printMatrix(finalVectorV)
@@ -181,7 +201,9 @@ object MainObject{
         //     println(line)
         // }
         var transitionMatrix = createTransitionMatrixOfCrawledPages()
-        computePageRank(transitionMatrix, 20)
+        computePageRank(transitionMatrix, 20, 0.95)
+
+
         
     }   
 
