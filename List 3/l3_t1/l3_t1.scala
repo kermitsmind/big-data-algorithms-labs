@@ -167,9 +167,13 @@ object MainObject{
         val lengthOfVectorV: Int = transitionMatrix.length
         // fill vector V with initial values (random surfer model: move to every node is equally probable)
         val initialValueOfVectorV: Float = (1.0 / lengthOfVectorV).toFloat
-        val valueOfVectorVBeta: Float = ((1.0 - beta) / lengthOfVectorV).toFloat
+        val valueOfVectorVBeta: Float = ((1.0 - beta.toFloat) / lengthOfVectorV).toFloat
         var temporaryVectorV = Array.ofDim[Float](lengthOfVectorV, 1)
         var vectorVBeta = Array.ofDim[Float](lengthOfVectorV, 1)
+        var newTransitionMatrix = transitionMatrix
+        newTransitionMatrix = newTransitionMatrix.map(_.map(_ * beta))
+        println("+++++++++++++++++++++++++++")
+        printMatrix(newTransitionMatrix)
         for (i <- 0 to (lengthOfVectorV - 1)){
             temporaryVectorV(i)(0) = initialValueOfVectorV
             vectorVBeta(i)(0) = valueOfVectorVBeta
@@ -180,9 +184,9 @@ object MainObject{
         // multiply transition matrix and vector V n times
         var finalVectorV = Array.ofDim[Float](lengthOfVectorV, 1)
         for (i <- 1 to numberOfIterations){
-            finalVectorV = multiplyMatrices(transitionMatrix, temporaryVectorV)
-            finalVectorV = finalVectorV.map(_.map(_ * beta))
+            finalVectorV = multiplyMatrices(newTransitionMatrix, temporaryVectorV)
             temporaryVectorV = addMatrices(finalVectorV, vectorVBeta)
+            finalVectorV = temporaryVectorV
 
             println("\n---------------------")
             printMatrix(finalVectorV)
@@ -201,7 +205,7 @@ object MainObject{
         //     println(line)
         // }
         var transitionMatrix = createTransitionMatrixOfCrawledPages()
-        computePageRank(transitionMatrix, 20, 0.95)
+        computePageRank(transitionMatrix, 5, 0.8)
 
 
         
