@@ -212,7 +212,29 @@ object MainObject{
             println("\n\nvector's difference: " + vectorVsDifference)
             finalVectorVOld = finalVectorVNew
         }
-        
+        // assign every element from vector v to its name from crawled pages list
+        var pageRankMap: Map[String, Float] = Map()
+        var pageRankMapSorted: Map[String, Float] = Map()
+        val crawledPagesListArray: Array[String] = readFile(fileName = "crawledPagesList")
+        var vectorV: Array[Float] = Array()
+        println("****************************")
+        for (row <- finalVectorVOld){
+            for (column <- row){
+                vectorV = vectorV.appended(column)
+            }
+        }
+        for (i <- 0 to (vectorV.length - 1)){
+            pageRankMap += (crawledPagesListArray(i) -> vectorV(i))
+        }
+        pageRankMapSorted = ListMap(pageRankMap.toSeq.sortWith(_._2 > _._2):_*)
+        val fileWriter = new FileWriter("pageRank", false)
+        var lineToWrite: String = "key   value\n"
+        fileWriter.write(lineToWrite)
+        for (key <- pageRankMapSorted.keys){
+            lineToWrite = "\n" + key + "   " + pageRankMap.getOrElse(key, "")
+            fileWriter.write(lineToWrite)
+        }
+        fileWriter.close()
     }
 
 
