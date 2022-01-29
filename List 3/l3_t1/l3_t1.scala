@@ -252,13 +252,26 @@ object MainObject{
         val matrixLength: Int = transitionMAtrix.length
         var matrixCellValue: Float = 0
 
+        print("\n\nPAGE: " + pageName + "\n")
+
         // anlyse out links (pages to which given page is pointing)
+        print("\n\nOUT LINK ANALYSIS\n")
         for (i_row <- 0 to (matrixLength - 1)){
             matrixCellValue = transitionMAtrix(i_row)(elementIndex)
             if (matrixCellValue > 0.0){
-                print("\n" + (i_row + 1).toString + " page is NOT zero")
+                print("\n" + (i_row + 1).toString + " is outlink")
             }else{
-                print("\n" + (i_row + 1).toString + " page is zero")
+                print("\n---")
+            }
+        }
+        // anlyse in links (pages which are pointing to a given page)
+        print("\n\n\nIN LINK ANALYSIS\n")
+        for (j_column <- 0 to (matrixLength - 1)){
+            matrixCellValue = transitionMAtrix(elementIndex)(j_column)
+            if (matrixCellValue > 0.0){
+                print("\n" + (j_column + 1).toString + " is inlink")
+            }else{
+                print("\n---")
             }
         }
         
@@ -282,7 +295,7 @@ object MainObject{
         var transitionMatrix = createTransitionMatrixOfCrawledPages()
         printMatrix(transitionMatrix)
         // computePageRank(transitionMatrix, 0.90, 0.00001)
-        analyseGivenPage("3", transitionMatrix)
+        analyseGivenPage("7", transitionMatrix)
     }   
 
 }
