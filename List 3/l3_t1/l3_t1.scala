@@ -213,6 +213,9 @@ object MainObject{
             finalVectorVOld = finalVectorVNew
         }
         // assign every element from vector v to its name from crawled pages list
+        // firstly make an array out of vector v matrix
+        // then make map (pageName -> pageNameRank) and sort it
+        // lastly save sorted map into a file
         var pageRankMap: Map[String, Float] = Map()
         var pageRankMapSorted: Map[String, Float] = Map()
         val crawledPagesListArray: Array[String] = readFile(fileName = "crawledPagesList")
