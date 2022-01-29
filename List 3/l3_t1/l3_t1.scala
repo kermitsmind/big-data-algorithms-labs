@@ -23,6 +23,7 @@ import java.io._
 import scala.math._
 import Array._
 import scala.util.matching.Regex
+import util.control.Breaks._
 
 object MainObject{
 
@@ -51,7 +52,7 @@ object MainObject{
         // below regex mathes many url's however on wikipedia wikipedia's subpages are linked via 'wiki/Topic' thus below regex won't work as desired
         // val generalHrefPattern = "(https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|www\\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9]+\\.[^\\s]{2,}|www\\.[a-zA-Z0-9]+\\.[^\\s]{2,})".r
         val wikiHrefPattern = "(?<=wiki\\/)(?!.*%|Category|Help|Wikipedia|Special|" +
-        "Talk|Privacy_policy|Cookie_statement|Terms_of_Use|Portal|Main_Page|File|Template)[^\"]*"
+        "Talk|Privacy_policy|Cookie_statement|Terms_of_Use|Portal|Main_Page|File|Template|(?!.*)/(?!.*))[^\"]*"
         val hrefs = wikiHrefPattern.r.findAllIn(pageContent).toSet.toArray
         writeFile(fileName = ("webPages/" + pageName), stringArray = hrefs)
         val randomNumberGenerator = scala.util.Random
@@ -65,7 +66,7 @@ object MainObject{
         var crawledPagesListArray: Array[String] = Array()
         crawledPagesListArray = crawledPagesListArray.appended("(?<=https:\\/\\/en.wikipedia.org\\/wiki\\/).*".r.findAllIn(url).next)
         var nextUrlToVisit: String = crawlPageFromWeb(url = url)
-        var remainingPagesToVisit: Int = n -1
+        var remainingPagesToVisit: Int = n - 1
         for (i <- 1 to remainingPagesToVisit){
             crawledPagesListArray = crawledPagesListArray.appended("(?<=https:\\/\\/en.wikipedia.org\\/wiki\\/).*".r.findAllIn(nextUrlToVisit).next)
             nextUrlToVisit = crawlPageFromWeb(url = nextUrlToVisit)
@@ -206,10 +207,10 @@ object MainObject{
             finalVectorVNew = multiplyMatrices(newTransitionMatrix, temporaryVectorV)
             temporaryVectorV = addMatrices(finalVectorVNew, vectorVBeta)
             finalVectorVNew = temporaryVectorV
-            println("\n---------------------")
+            println("\n    ---------------------")
             printMatrix(finalVectorVNew)
             vectorVsDifference = compareMatrices(finalVectorVNew, finalVectorVOld)
-            println("\n\nvector's difference: " + vectorVsDifference)
+            println("\n\n    vector's difference: " + vectorVsDifference)
             finalVectorVOld = finalVectorVNew
         }
         // assign every element from vector v to its name from crawled pages list
@@ -220,7 +221,6 @@ object MainObject{
         var pageRankMapSorted: Map[String, Float] = Map()
         val crawledPagesListArray: Array[String] = readFile(fileName = "crawledPagesList")
         var vectorV: Array[Float] = Array()
-        println("****************************")
         for (row <- finalVectorVOld){
             for (column <- row){
                 vectorV = vectorV.appended(column)
@@ -257,11 +257,11 @@ object MainObject{
         var lineToWrite: String = ""
 
         // anlyse out links (pages to which given page is pointing)
-        lineToWrite = "\n\nPAGE: " + pageName + "\n"
+        lineToWrite = "\n\n    PAGE: " + pageName + "\n"
         fileWriter.write(lineToWrite)
         print(lineToWrite)
 
-        lineToWrite = "\n\nOUT LINK ANALYSIS\n"
+        lineToWrite = "\n\n\n    --------------------\n\nOUT LINK ANALYSIS\n"
         fileWriter.write(lineToWrite)
         print(lineToWrite)
         counter = 0
@@ -269,11 +269,11 @@ object MainObject{
             matrixCellValue = transitionMAtrix(i_row)(elementIndex)
             if (matrixCellValue > 0.0){
                 counter += 1
-                lineToWrite = "\n" + (i_row + 1).toString + " is outlink"
+                lineToWrite = "\n    " + (i_row + 1).toString + ". " + crawledPagesListArray(i_row).toString + " is outlink"
                 fileWriter.write(lineToWrite)
                 print(lineToWrite)
             }else{
-                print("\n---")
+                print("\n    ---")
             }
         }
         lineToWrite = "\n\ntotal no of pages: " + matrixLength.toString + ", outlink no: " + counter.toString
@@ -281,7 +281,7 @@ object MainObject{
         print(lineToWrite) 
         
         // anlyse in links (pages which are pointing to a given page)
-        lineToWrite = "\n\n\nIN LINK ANALYSIS\n"
+        lineToWrite = "\n\n\n    --------------------\n\nIN LINK ANALYSIS\n"
         fileWriter.write(lineToWrite)
         print(lineToWrite)
         counter = 0
@@ -289,14 +289,14 @@ object MainObject{
             matrixCellValue = transitionMAtrix(elementIndex)(j_column)
             if (matrixCellValue > 0.0){
                 counter += 1
-                lineToWrite = "\n" + (j_column + 1).toString + " is inlink"
+                lineToWrite = "\n    " + (j_column + 1).toString + ". " + crawledPagesListArray(j_column).toString + " is inlink"
                 fileWriter.write(lineToWrite)
                 print(lineToWrite)
             }else{
-                print("\n---")
+                print("\n    ---")
             }
         }
-        lineToWrite = "\n\ntotal no of pages: " + matrixLength.toString + ", inlink no: " + counter.toString
+        lineToWrite = "\n\n    total no of pages: " + matrixLength.toString + ", inlink no: " + counter.toString
         fileWriter.write(lineToWrite)
         print(lineToWrite)
 
@@ -305,23 +305,66 @@ object MainObject{
     }
 
 
-
-
-
-
-
     // main function
     def main(args: Array[String]): Unit = {
-        val html = "https://en.wikipedia.org/wiki/Web_crawler"
-        // crawlGivenNumberOfPages(url = html, n = 10)
-        // val rTest: Array[String] = readFile(fileName = "crawledPagesList")
-        // for (line <- rTest){
-        //     println(line)
-        // }
-        var transitionMatrix = createTransitionMatrixOfCrawledPages()
-        printMatrix(transitionMatrix)
-        // computePageRank(transitionMatrix, 0.90, 0.00001)
-        analyseGivenPage("7", transitionMatrix)
+        var loopCondition: Boolean = true
+        breakable{
+            while(loopCondition){
+                print("\n\nLOOP action: ")
+                var loopUserInput = scala.io.StdIn.readLine()
+                loopUserInput match {
+                    case "crawl" => {
+                        print("\n    CRAWL MODE")
+                        print("\n    remember to delete data from webPages and crawledPages")
+                        print("\n\n    no of pages to crawl: ")
+                        var noOfPagesToCrawl = scala.io.StdIn.readLine().toInt
+                        print("\n    initial wiki page html: ")
+                        var initialWikiPageHtml = scala.io.StdIn.readLine()
+                        if (initialWikiPageHtml == ""){
+                            initialWikiPageHtml = "https://en.wikipedia.org/wiki/Web_crawler"
+                        }
+                        crawlGivenNumberOfPages(url = initialWikiPageHtml, n = noOfPagesToCrawl)
+                        print("\n    crawling done succesfully")
+                        val crawledPagesArray: Array[String] = readFile(fileName = "crawledPagesList")
+                        print("\n    crawled pages:\n")
+                        for (line <- crawledPagesArray){
+                            println("    " + line)
+                        }
+                    }
+                    case "page rank" => {
+                        print("\n    PAGE RANK MODE")
+                        print("\n    remember to have data from webPages and crawledPages")
+                        print("\n\n    beta: ")
+                        var beta = scala.io.StdIn.readLine().toFloat
+                        print("\n    epsilon: ")
+                        var epsilon = scala.io.StdIn.readLine().toFloat
+                        var transitionMatrix = createTransitionMatrixOfCrawledPages()
+                        print("\n\n    transition matrix\n\n")
+                        printMatrix(transitionMatrix)
+                        computePageRank(transitionMatrix, 0.90, 0.00001)
+                    }
+                    case "link analysis" => {
+                        print("\n    LINK ANALYSIS MODE")
+                        print("\n    remember to have data from webPages and crawledPages")
+                        print("\n\n    page name: ")
+                        var pageName = scala.io.StdIn.readLine()
+                        var transitionMatrix = createTransitionMatrixOfCrawledPages()
+                        print("\n\n    transition matrix\n\n")
+                        printMatrix(transitionMatrix)
+                        analyseGivenPage(pageName, transitionMatrix)                        
+                    }
+                    case "break" => {
+                        loopCondition = false
+                    }
+                    case _ => {
+                        print("\n    not recognized action, try again")
+                    }
+                }
+            }
+        }
+
+
+
     }   
 
 }
