@@ -46,18 +46,20 @@ object MainObject{
     }
 
     // take url, obtain wiki/Topic hrefs and save them to file, returns one link out of the found ones (randomly)
-    def crawlPageFromWeb(url: String): String = {
+    def crawlPageFromWeb(url: String): Tuple3[String, String, String] = {
         val pageContent = Source.fromURL(url).mkString
         val pageName = "(?<=https:\\/\\/en.wikipedia.org\\/wiki\\/).*".r.findAllIn(url).next
         // below regex mathes many url's however on wikipedia wikipedia's subpages are linked via 'wiki/Topic' thus below regex won't work as desired
         // val generalHrefPattern = "(https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|www\\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9]+\\.[^\\s]{2,}|www\\.[a-zA-Z0-9]+\\.[^\\s]{2,})".r
         val wikiHrefPattern = "(?<=wiki\\/)(?!.*%|Category|Help|Wikipedia|Special|" +
-        "Talk|Privacy_policy|Cookie_statement|Terms_of_Use|Portal|Main_Page|File|Template|(?!.*)/(?!.*))[^\"]*"
+        "Talk|Privacy_policy|Cookie_statement|Terms_of_Use|Portal|Main_Page|File|Template|([A-Za-z0-9\\-\\_]+)/([A-Za-z0-9\\-\\_]+)|([A-Za-z0-9\\-\\_]+)//([A-Za-z0-9\\-\\_]+))[^\"]*"
         val hrefs = wikiHrefPattern.r.findAllIn(pageContent).toSet.toArray
         writeFile(fileName = ("webPages/" + pageName), stringArray = hrefs)
         val randomNumberGenerator = scala.util.Random
-        val randomNumber = randomNumberGenerator.nextInt(hrefs.length)
-        return ("https://en.wikipedia.org/wiki/" + hrefs(randomNumber))
+        val randomNumber1 = randomNumberGenerator.nextInt(hrefs.length)
+        val randomNumber2 = randomNumberGenerator.nextInt(hrefs.length)
+        val randomNumber3 = randomNumberGenerator.nextInt(hrefs.length)
+        return (("https://en.wikipedia.org/wiki/" + hrefs(randomNumber1)), ("https://en.wikipedia.org/wiki/" + hrefs(randomNumber2)), ("https://en.wikipedia.org/wiki/" + hrefs(randomNumber3)))
     }
 
     // take initial web page url and number n, crawl n pages and save them to files
@@ -65,11 +67,36 @@ object MainObject{
         val crawledPagesListName: String = "crawledPagesList"
         var crawledPagesListArray: Array[String] = Array()
         crawledPagesListArray = crawledPagesListArray.appended("(?<=https:\\/\\/en.wikipedia.org\\/wiki\\/).*".r.findAllIn(url).next)
-        var nextUrlToVisit: String = crawlPageFromWeb(url = url)
+        var nextUrlToVisit: String = crawlPageFromWeb(url = url)._1
         var remainingPagesToVisit: Int = n - 1
         for (i <- 1 to remainingPagesToVisit){
-            crawledPagesListArray = crawledPagesListArray.appended("(?<=https:\\/\\/en.wikipedia.org\\/wiki\\/).*".r.findAllIn(nextUrlToVisit).next)
-            nextUrlToVisit = crawlPageFromWeb(url = nextUrlToVisit)
+            try{
+                crawledPagesListArray = crawledPagesListArray.appended("(?<=https:\\/\\/en.wikipedia.org\\/wiki\\/).*".r.findAllIn(nextUrlToVisit).next)
+                nextUrlToVisit = crawlPageFromWeb(url = nextUrlToVisit)._1
+            }catch{
+                case _: Throwable => print("\n\n    problem 1 with " + nextUrlToVisit)
+                crawledPagesListArray = crawledPagesListArray.dropRight(1)
+                try{
+                    crawledPagesListArray = crawledPagesListArray.appended("(?<=https:\\/\\/en.wikipedia.org\\/wiki\\/).*".r.findAllIn(nextUrlToVisit).next)
+                    nextUrlToVisit = crawlPageFromWeb(url = nextUrlToVisit)._2
+                }catch{
+                    case _: Throwable => print("\n\n    problem 2 with " + nextUrlToVisit)
+                        crawledPagesListArray = crawledPagesListArray.dropRight(1)
+                        try{
+                            crawledPagesListArray = crawledPagesListArray.appended("(?<=https:\\/\\/en.wikipedia.org\\/wiki\\/).*".r.findAllIn(nextUrlToVisit).next)
+                            nextUrlToVisit = crawlPageFromWeb(url = nextUrlToVisit)._3
+                        }catch{
+                            case _: Throwable => print("\n\n    problem 3 with " + nextUrlToVisit)
+                            val randomNumberGenerator = scala.util.Random
+                            val randomNumber = randomNumberGenerator.nextInt(crawledPagesListArray.length)
+                            crawledPagesListArray = crawledPagesListArray.appended("(?<=https:\\/\\/en.wikipedia.org\\/wiki\\/).*".r.findAllIn(crawledPagesListArray(randomNumber)).next)
+                            nextUrlToVisit = crawlPageFromWeb(url = nextUrlToVisit)._1
+                        }
+                }
+            }
+            finally{
+
+            }
         }
         writeFile(fileName = crawledPagesListName, stringArray = crawledPagesListArray)
     }
@@ -326,7 +353,7 @@ object MainObject{
                         crawlGivenNumberOfPages(url = initialWikiPageHtml, n = noOfPagesToCrawl)
                         print("\n    crawling done succesfully")
                         val crawledPagesArray: Array[String] = readFile(fileName = "crawledPagesList")
-                        print("\n    crawled pages:\n")
+                        print("\n    crawled pages:\n\n")
                         for (line <- crawledPagesArray){
                             println("    " + line)
                         }
