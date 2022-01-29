@@ -237,8 +237,37 @@ object MainObject{
             lineToWrite = "\n" + key + "   " + pageRankMap.getOrElse(key, "")
             fileWriter.write(lineToWrite)
         }
-        fileWriter.close()
+        fileWriter.close() 
     }
+
+    // analyse given page
+    def analyseGivenPage(pageName: String, transitionMAtrix: Array[Array[Float]]): Unit = {
+        val crawledPagesListArray: Array[String] = readFile(fileName = "crawledPagesList")
+        var elementIndex: Int = crawledPagesListArray.indexOf(pageName)
+        var outLinksNumber: Int = 0
+        var outLinksNames: Array[String] = Array()
+        var inLinksNumber: Int = 0
+        var inLinksNames: Array[String] = Array()
+
+        val matrixLength: Int = transitionMAtrix.length
+        var matrixCellValue: Float = 0
+
+        // anlyse out links (pages to which given page is pointing)
+        for (i_row <- 0 to (matrixLength - 1)){
+            matrixCellValue = transitionMAtrix(i_row)(elementIndex)
+            if (matrixCellValue > 0.0){
+                print("\n" + (i_row + 1).toString + " page is NOT zero")
+            }else{
+                print("\n" + (i_row + 1).toString + " page is zero")
+            }
+        }
+        
+
+    }
+
+
+
+
 
 
 
@@ -251,7 +280,9 @@ object MainObject{
         //     println(line)
         // }
         var transitionMatrix = createTransitionMatrixOfCrawledPages()
-        computePageRank(transitionMatrix, 0.90, 0.00001)
+        printMatrix(transitionMatrix)
+        // computePageRank(transitionMatrix, 0.90, 0.00001)
+        analyseGivenPage("3", transitionMatrix)
     }   
 
 }
