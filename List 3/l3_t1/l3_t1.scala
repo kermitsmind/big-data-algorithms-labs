@@ -248,33 +248,59 @@ object MainObject{
         var outLinksNames: Array[String] = Array()
         var inLinksNumber: Int = 0
         var inLinksNames: Array[String] = Array()
+        var counter: Int = 0
 
         val matrixLength: Int = transitionMAtrix.length
         var matrixCellValue: Float = 0
 
-        print("\n\nPAGE: " + pageName + "\n")
+        val fileWriter = new FileWriter("linkAnalysis", false)
+        var lineToWrite: String = ""
 
         // anlyse out links (pages to which given page is pointing)
-        print("\n\nOUT LINK ANALYSIS\n")
+        lineToWrite = "\n\nPAGE: " + pageName + "\n"
+        fileWriter.write(lineToWrite)
+        print(lineToWrite)
+
+        lineToWrite = "\n\nOUT LINK ANALYSIS\n"
+        fileWriter.write(lineToWrite)
+        print(lineToWrite)
+        counter = 0
         for (i_row <- 0 to (matrixLength - 1)){
             matrixCellValue = transitionMAtrix(i_row)(elementIndex)
             if (matrixCellValue > 0.0){
-                print("\n" + (i_row + 1).toString + " is outlink")
+                counter += 1
+                lineToWrite = "\n" + (i_row + 1).toString + " is outlink"
+                fileWriter.write(lineToWrite)
+                print(lineToWrite)
             }else{
                 print("\n---")
             }
         }
+        lineToWrite = "\n\ntotal no of pages: " + matrixLength.toString + ", outlink no: " + counter.toString
+        fileWriter.write(lineToWrite)
+        print(lineToWrite) 
+        
         // anlyse in links (pages which are pointing to a given page)
-        print("\n\n\nIN LINK ANALYSIS\n")
+        lineToWrite = "\n\n\nIN LINK ANALYSIS\n"
+        fileWriter.write(lineToWrite)
+        print(lineToWrite)
+        counter = 0
         for (j_column <- 0 to (matrixLength - 1)){
             matrixCellValue = transitionMAtrix(elementIndex)(j_column)
             if (matrixCellValue > 0.0){
-                print("\n" + (j_column + 1).toString + " is inlink")
+                counter += 1
+                lineToWrite = "\n" + (j_column + 1).toString + " is inlink"
+                fileWriter.write(lineToWrite)
+                print(lineToWrite)
             }else{
                 print("\n---")
             }
         }
-        
+        lineToWrite = "\n\ntotal no of pages: " + matrixLength.toString + ", inlink no: " + counter.toString
+        fileWriter.write(lineToWrite)
+        print(lineToWrite)
+
+        fileWriter.close()
 
     }
 
